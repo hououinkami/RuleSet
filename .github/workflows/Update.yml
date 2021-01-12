@@ -17,7 +17,7 @@ env:
   TZ: Asia/Shanghai
   WECHAT_NOTIFICATION: true
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
-  SOURCE_limbo_NAME: Adblock4limbo.list
+  SOURCE_limbo_NAME: limbo.list
 
 jobs:
   GenerateList:
