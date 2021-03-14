@@ -1,4 +1,4 @@
-name: 更新Adblock4limbo
+name: 更新规则
 
 on:
   push:
@@ -18,6 +18,9 @@ env:
   WECHAT_NOTIFICATION: true
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
   SOURCE_limbo_NAME: limbo.list
+  SOURCE_antiad: https://anti-ad.net/clash.yaml
+  SOURCE_antiad_NAME: antiad.list
+
 
 jobs:
   GenerateList:
@@ -45,7 +48,7 @@ jobs:
       run : |
         wget $SOURCE_limbo -O $SOURCE_limbo_NAME
     
-    - name: 生成RuleSet
+    - name: 生成RuleSet_Adblock4limbo
       run : |
         awk '
         {
@@ -56,9 +59,22 @@ jobs:
         }
         ' $SOURCE_limbo_NAME>Adblock4limbo.list
     
+    - name: 生成RuleSet_anti-AD
+      run : |
+        awk '
+        {
+          if($0~/, reject/) {
+            gsub("- '+.","- DOMAIN,");
+            gsub("'","");
+            print $0;
+          };
+        }
+        ' $SOURCE_antiad_NAME>anti-AD.yaml
+    
     - name: 删除临时文件
       run : |
         rm $SOURCE_limbo_NAME
+        rm $SOURCE_antiad_NAME
         ls
     
     - name: 判断是否有变更
