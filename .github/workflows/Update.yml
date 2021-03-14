@@ -47,6 +47,7 @@ jobs:
     - name: 获取最新源
       run : |
         wget $SOURCE_limbo -O $SOURCE_limbo_NAME
+        wget $SOURCE_antiad -O $SOURCE_antiad_NAME
     
     - name: 生成RuleSet_Adblock4limbo
       run : |
