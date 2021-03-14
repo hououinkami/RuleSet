@@ -64,7 +64,7 @@ jobs:
         awk '
         {
           if($0~/, reject/) {
-            gsub("- '+.","- DOMAIN,");
+            gsub("- \'+.","- DOMAIN,");
             gsub("'","");
             print $0;
           };
