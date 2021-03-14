@@ -63,11 +63,9 @@ jobs:
       run : |
         awk '
         {
-          if($0~/, reject/) {
-            gsub("- \'+.","- DOMAIN,");
-            gsub("'","");
-            print $0;
-          };
+          gsub(/- '\''\+\./ , "- DOMAIN,");
+          gsub(/'\''/ , "");
+          print $0;
         }
         ' $SOURCE_antiad_NAME>anti-AD.yaml
     
