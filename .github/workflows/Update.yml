@@ -107,10 +107,10 @@ jobs:
         keep_minimum_runs: 3
 
     - name: Telegram推送
-      if: env.TELEGRAM_NOTIFICATION == 'true' && !cancelled() && [[ "${{steps.status.outputs.STATUS}}" == "change" ]]
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_CHAT_ID }}
-        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        args: anti-ADルール更新しました！
+      if: env.TELEGRAM_NOTIFICATION == 'true' && !cancelled()  
+      run: |
+        if [[ "${{steps.status.outputs.STATUS}}" == "change" ]]
+        then
+          curl -d "text=anti-ADルール更新しました！" -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendmessage?chat_id=$${{ secrets.TELEGRAM_CHAT_ID }}"  
+        fi
         
