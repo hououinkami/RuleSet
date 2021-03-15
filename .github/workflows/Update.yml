@@ -5,7 +5,7 @@ on:
     branches:
       - master
     path:
-      - *
+      - .*
   release:
     types: [published]
   schedule:
