@@ -64,7 +64,7 @@ jobs:
       run : |
         awk '
         {
-          gsub(/- '\''\+\./ , "- DOMAIN,");
+          gsub(/- '\''\+\./ , "- DOMAIN-SUFFIX,");
           gsub(/'\''/ , "");
           print $0;
         }
