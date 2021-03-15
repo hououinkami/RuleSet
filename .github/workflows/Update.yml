@@ -15,7 +15,7 @@ on:
 
 env:
   TZ: Asia/Shanghai
-  WECHAT_NOTIFICATION: true
+  TELEGRAM_NOTIFICATION: true
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
   SOURCE_limbo_NAME: limbo.list
   SOURCE_antiad: https://anti-ad.net/clash.yaml
@@ -100,11 +100,11 @@ jobs:
           git push origin master
         fi
 
-    - name: WeChat推送
-      if: env.WECHAT_NOTIFICATION == 'true' && !cancelled()
+    - name: Telegram推送
+      if: env.TELEGRAM_NOTIFICATION == 'true' && !cancelled()  
       run: |
-        if [[ "${{steps.status.outputs.status}}" == "change" ]]
+        if [[ "${{steps.status.outputs.STATUS}}" == "change" ]]
         then
-          curl https://sc.ftqq.com/${{secrets.ServerChan}}.send?text=Adblock4limbo规则已更新!
+          curl https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendmessage?chat_id=${{ secrets.TELEGRAM_TO }}&text=anti-ADルール更新しました！
         fi
         
