@@ -3,9 +3,9 @@ name: 更新规则
 on:
   push:
     branches:
-      - beta
+      - master
     path:
-      - 'start'
+      - *
   release:
     types: [published]
   schedule:
@@ -100,11 +100,17 @@ jobs:
           git push origin master
         fi
 
+    - name: 移除workflow运行
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 3
+
     - name: Telegram推送
       if: env.TELEGRAM_NOTIFICATION == 'true' && !cancelled()  
       run: |
         if [[ "${{steps.status.outputs.STATUS}}" == "change" ]]
         then
-          curl https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendmessage?chat_id=${{ secrets.TELEGRAM_TO }}&text=anti-ADルール更新しました！
+          curl https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendmessage?chat_id=${{ secrets.TELEGRAM_TO }}&text=antiADルール更新しました！
         fi
         
