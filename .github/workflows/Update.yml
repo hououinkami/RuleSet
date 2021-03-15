@@ -111,6 +111,6 @@ jobs:
       run: |
         if [[ "${{steps.status.outputs.STATUS}}" == "change" ]]
         then
-          curl -d "text=anti-ADルール更新しました！" -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendmessage?chat_id=$${{ secrets.TELEGRAM_CHAT_ID }}"  
+          curl -d "text=anti-ADルール更新しました！" -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendmessage?chat_id=${{ secrets.TELEGRAM_CHAT_ID }}"
         fi
         
