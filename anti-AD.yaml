@@ -4,7 +4,7 @@
 #TOTAL_LINES=41928
 
 #RULE-SET,AntiAd,REJECT
-payload
+payload:
   - DOMAIN-SUFFIX,00-gov.cn
   - DOMAIN-SUFFIX,kwcdn.000dn.com
   - DOMAIN-SUFFIX,kwcscdn.000dn.com
