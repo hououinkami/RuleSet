@@ -20,6 +20,7 @@ env:
   SOURCE_limbo_NAME: limbo.list
   SOURCE_antiad: https://anti-ad.net/clash.yaml
   SOURCE_antiad_NAME: antiad.list
+  TELEGRAM_NOTIFICATION: false
 
 
 jobs:
