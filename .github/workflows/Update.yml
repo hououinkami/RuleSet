@@ -50,7 +50,7 @@ jobs:
         wget $SOURCE_limbo -O $SOURCE_limbo_NAME
         wget $SOURCE_antiad -O $SOURCE_antiad_NAME
     
-    - name: 生成RuleSet_Adblock4limbo
+    - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
         awk '
         {
@@ -71,10 +71,20 @@ jobs:
         }
         ' $SOURCE_antiad_NAME>anti-AD.yaml
     
+    - name: 生成Special
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Special.list -O Special.tmp
+        awk '
+        {
+          print $0",🌐 直连"
+        }
+        ' Special.tmp>Special.list
+
     - name: 删除临时文件
       run : |
         rm $SOURCE_limbo_NAME
         rm $SOURCE_antiad_NAME
+        rm *.tmp
         ls
     
     - name: 判断是否有变更
