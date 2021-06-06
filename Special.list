@@ -1,5 +1,4 @@
 DOMAIN-SUFFIX,dler.cloud,🌐 直连
-PROCESS-NAME,storedownloadd,🌐 直连
 USER-AGENT,com.apple.appstored*,🌐 直连
 DOMAIN,aod.itunes.apple.com,🌐 直连
 DOMAIN,api.smoot.apple.cn,🌐 直连
@@ -26,29 +25,16 @@ DOMAIN-SUFFIX,windowsupdate.com,🌐 直连
 DOMAIN-SUFFIX,xbox.com,🌐 直连
 DOMAIN-SUFFIX,xboxlive.com,🌐 直连
 DOMAIN-SUFFIX,invoice.mugglepay.com,🌐 直连
-PROCESS-NAME,v2ray,🌐 直连
-PROCESS-NAME,ss-local,🌐 直连
 USER-AGENT,Steam*,🌐 直连
 DOMAIN-SUFFIX,pinyuncloud.com,🌐 直连
 DOMAIN-SUFFIX,steamcontent.com,🌐 直连
 DOMAIN-SUFFIX,tesla.cn,🌐 直连
 DOMAIN-SUFFIX,tesla-cdn.thron.cn,🌐 直连
-PROCESS-NAME,UUBooster,🌐 直连
 DOMAIN-SUFFIX,windows.com,🌐 直连
 DOMAIN-SUFFIX,windows.net,🌐 直连
 DOMAIN-SUFFIX,windowsupdate.com,🌐 直连
 USER-AGENT,%E8%BF%85%E9%9B%B7,🌐 直连
 DOMAIN-SUFFIX,xunlei.com,🌐 直连
-PROCESS-NAME,aria2c,🌐 直连
-PROCESS-NAME,fdm,🌐 直连
-PROCESS-NAME,Folx,🌐 直连
-PROCESS-NAME,NetTransport,🌐 直连
-PROCESS-NAME,qbittorrent,🌐 直连
-PROCESS-NAME,Thunder,🌐 直连
-PROCESS-NAME,Transmission,🌐 直连
-PROCESS-NAME,uTorrent,🌐 直连
-PROCESS-NAME,WebTorrent,🌐 直连
-PROCESS-NAME,WebTorrent Helper,🌐 直连
 DOMAIN-SUFFIX,awesome-hd.me,🌐 直连
 DOMAIN-SUFFIX,broadcasthe.net,🌐 直连
 DOMAIN-SUFFIX,chdbits.co,🌐 直连
