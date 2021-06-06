@@ -59,4 +59,3 @@ DOMAIN-SUFFIX,springsunday.net,🌐 直连
 DOMAIN-SUFFIX,tjupt.org,🌐 直连
 DOMAIN-SUFFIX,totheglory.im,🌐 直连
 DOMAIN-SUFFIX,smtp,🌐 直连
-URL-REGEX,(Subject|HELO|SMTP),🌐 直连
