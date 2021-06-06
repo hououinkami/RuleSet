@@ -77,6 +77,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve","");
             print $0",🌐 直连"
           }
         }
@@ -88,6 +89,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🚫 屏蔽"
           }
         }
@@ -99,6 +101,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🎬 YouTube"
           }
         }
@@ -110,6 +113,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",⏲ Speedtest"
           }
         }
@@ -121,6 +125,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🌍 代理"
           }
         }
@@ -132,6 +137,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🍎 Apple"
           }
         }
@@ -143,6 +149,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🌐 直连"
           }
         }
@@ -154,6 +161,7 @@ jobs:
         awk '
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            gsub(",no-resolve",""); 
             print $0",🌐 直连"
           }
         }
