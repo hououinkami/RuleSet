@@ -1,7 +1,4 @@
-# > Dler Cloud,🌐 直连
 DOMAIN-SUFFIX,dler.cloud,🌐 直连
-,🌐 直连
-# > Apple CDN,🌐 直连
 PROCESS-NAME,storedownloadd,🌐 直连
 USER-AGENT,com.apple.appstored*,🌐 直连
 DOMAIN,aod.itunes.apple.com,🌐 直连
@@ -18,52 +15,30 @@ DOMAIN,swcdn.apple.com,🌐 直连
 DOMAIN,updates-http.cdn-apple.com,🌐 直连
 DOMAIN-SUFFIX,ls.apple.com,🌐 直连
 DOMAIN-SUFFIX,mzstatic.com,🌐 直连
-,🌐 直连
-# > Epic,🌐 直连
 DOMAIN-KEYWORD,epicgames,🌐 直连
-,🌐 直连
-# > Google,🌐 直连
 DOMAIN-KEYWORD,mtalk.google.com,🌐 直连
 DOMAIN,safebrowsing.googleapis.com,🌐 直连
 DOMAIN-SUFFIX,dl.google.com,🌐 直连
-,🌐 直连
-# > Microsoft,🌐 直连
 DOMAIN-SUFFIX,msftconnecttest.com,🌐 直连
 DOMAIN-SUFFIX,windows.com,🌐 直连
 DOMAIN-SUFFIX,windows.net,🌐 直连
 DOMAIN-SUFFIX,windowsupdate.com,🌐 直连
 DOMAIN-SUFFIX,xbox.com,🌐 直连
 DOMAIN-SUFFIX,xboxlive.com,🌐 直连
-,🌐 直连
-# > Mugglepay,🌐 直连
 DOMAIN-SUFFIX,invoice.mugglepay.com,🌐 直连
-,🌐 直连
-# > Proxy plugin,🌐 直连
 PROCESS-NAME,v2ray,🌐 直连
 PROCESS-NAME,ss-local,🌐 直连
-,🌐 直连
-# > Steam,🌐 直连
 USER-AGENT,Steam*,🌐 直连
 DOMAIN-SUFFIX,pinyuncloud.com,🌐 直连
 DOMAIN-SUFFIX,steamcontent.com,🌐 直连
-,🌐 直连
-# > Tesla,🌐 直连
 DOMAIN-SUFFIX,tesla.cn,🌐 直连
 DOMAIN-SUFFIX,tesla-cdn.thron.cn,🌐 直连
-,🌐 直连
-# > UUBooster,🌐 直连
 PROCESS-NAME,UUBooster,🌐 直连
-,🌐 直连
-# > Windows,🌐 直连
 DOMAIN-SUFFIX,windows.com,🌐 直连
 DOMAIN-SUFFIX,windows.net,🌐 直连
 DOMAIN-SUFFIX,windowsupdate.com,🌐 直连
-,🌐 直连
-# > Xunlei,🌐 直连
 USER-AGENT,%E8%BF%85%E9%9B%B7,🌐 直连
 DOMAIN-SUFFIX,xunlei.com,🌐 直连
-,🌐 直连
-# > Download,🌐 直连
 PROCESS-NAME,aria2c,🌐 直连
 PROCESS-NAME,fdm,🌐 直连
 PROCESS-NAME,Folx,🌐 直连
@@ -74,8 +49,6 @@ PROCESS-NAME,Transmission,🌐 直连
 PROCESS-NAME,uTorrent,🌐 直连
 PROCESS-NAME,WebTorrent,🌐 直连
 PROCESS-NAME,WebTorrent Helper,🌐 直连
-,🌐 直连
-# > Private Tracker,🌐 直连
 DOMAIN-SUFFIX,awesome-hd.me,🌐 直连
 DOMAIN-SUFFIX,broadcasthe.net,🌐 直连
 DOMAIN-SUFFIX,chdbits.co,🌐 直连
@@ -99,6 +72,5 @@ DOMAIN-SUFFIX,redacted.ch,🌐 直连
 DOMAIN-SUFFIX,springsunday.net,🌐 直连
 DOMAIN-SUFFIX,tjupt.org,🌐 直连
 DOMAIN-SUFFIX,totheglory.im,🌐 直连
-,🌐 直连
 DOMAIN-SUFFIX,smtp,🌐 直连
 URL-REGEX,(Subject|HELO|SMTP),🌐 直连
