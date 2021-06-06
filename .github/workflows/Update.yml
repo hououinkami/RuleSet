@@ -150,6 +150,7 @@ jobs:
         {
           if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
             gsub(",no-resolve",""); 
+            gsub("IP-CIDR6","ip6-cidr");
             print $0",🌐 直连"
           }
         }
