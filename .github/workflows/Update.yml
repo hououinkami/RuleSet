@@ -76,7 +76,9 @@ jobs:
         wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Special.list -O Special.tmp
         awk '
         {
-          print $0",🌐 直连"
+          if($0~/,/) {
+            print $0",🌐 直连"
+          }
         }
         ' Special.tmp>Special.list
 
