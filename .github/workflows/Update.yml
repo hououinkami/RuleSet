@@ -24,7 +24,7 @@ env:
 
 
 jobs:
-  GenerateList:
+  UpdateRule:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: macos-latest
 
@@ -81,6 +81,83 @@ jobs:
           }
         }
         ' Special.tmp>Special.list
+
+    - name: 生成Reject
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Reject.list -O Reject.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🚫 屏蔽"
+          }
+        }
+        ' Reject.tmp>Reject.list
+
+    - name: 生成YouTube
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/YouTube.list -O YouTube.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🎬 YouTube"
+          }
+        }
+        ' YouTube.tmp>YouTube.list
+
+    - name: 生成Speedtest
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Speedtest.list -O Speedtest.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",⏲ Speedtest"
+          }
+        }
+        ' Speedtest.tmp>Speedtest.list
+
+    - name: 生成Global
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Proxy.list -O Global.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🌍 代理"
+          }
+        }
+        ' Global.tmp>Global.list
+
+    - name: 生成Apple
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Apple.list -O Apple.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🍎 Apple"
+          }
+        }
+        ' Apple.tmp>Apple.list
+
+    - name: 生成China
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Domestic.list -O China.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🌐 直连"
+          }
+        }
+        ' China.tmp>China.list
+
+    - name: 生成ChinaIP
+      run : |
+        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Domestic%20IPs.list -O ChinaIP.tmp
+        awk '
+        {
+          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
+            print $0",🌐 直连"
+          }
+        }
+        ' ChinaIP.tmp>ChinaIP.list
 
     - name: 删除临时文件
       run : |
