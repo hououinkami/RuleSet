@@ -168,6 +168,14 @@ jobs:
         }
         ' ChinaIP.tmp>ChinaIP.list
 
+    - name: 生成Rewrite
+      run : |
+        wget https://raw.githubusercontent.com/Orz-3/QuantumultX/master/YouTube.conf -O Rewrite/YouTubeAD.conf
+        wget https://raw.githubusercontent.com/qiangxinglin/Emby/main/QuantumultX/emby.conf -O Rewrite/EMBY.conf
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf -O Rewrite/General.conf
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf -O Rewrite/Advertising.conf
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf -O Rewrite/AdvertisingPlus.conf
+
     - name: 删除临时文件
       run : |
         rm $SOURCE_limbo_NAME
