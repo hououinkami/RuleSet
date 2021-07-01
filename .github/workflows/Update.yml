@@ -63,13 +63,15 @@ jobs:
 
     - name: 生成RuleSet_for_Clash_Adblock4limbo
       run : |
-        cp Adblock4limbo.list Adblock4limbo.tmp
-        sed -i '1i\payload:' Adblock4limbo.tmp
+        cp Adblock4limbo.list Adblock4limbo1.tmp
+        sed "1 i\   
+        payload:
+        " Adblock4limbo1.tmp > Adblock4limbo2.tmp
         awk '
         {
           print "  - " $0
         }
-        ' Adblock4limbo.tmp>Adblock4limbo.yaml
+        ' Adblock4limbo2.tmp>Adblock4limbo.yaml
     
     - name: 生成RuleSet_anti-AD
       run : |
