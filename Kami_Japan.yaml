@@ -1,0 +1,12 @@
+payload:
+  # > Google
+  - DOMAIN-SUFFIX,google.com
+
+  # > YouTube
+  - DOMAIN-SUFFIX,youtube.com
+
+  # > PlayStation
+  - DOMAIN-SUFFIX,playstation.com
+  - DOMAIN-SUFFIX,playstation.net
+  - DOMAIN-SUFFIX,playstationnetwork.com
+  - DOMAIN-SUFFIX,sonyentertainmentnetwork.com
