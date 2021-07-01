@@ -70,6 +70,7 @@ jobs:
         awk '
         {
           if ($0~/payload/) {print $0};
+          if ($0~/\#/) {print "\#  - " $0};
           if ($0!~/payload/) {print "  - " $0};
         }
         ' Adblock4limbo2.tmp>Adblock4limbo.yaml
