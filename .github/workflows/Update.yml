@@ -5,7 +5,7 @@ on:
     branches:
       - master
     path:
-      - .*
+      - .yml
   release:
     types: [published]
   schedule:
@@ -69,7 +69,8 @@ jobs:
         " Adblock4limbo1.tmp > Adblock4limbo2.tmp
         awk '
         {
-          print "  - " $0
+          if ($0~/payload/) {print $0};
+          if ($0!~/payload/) {print "  - " $0};
         }
         ' Adblock4limbo2.tmp>Adblock4limbo.yaml
     
