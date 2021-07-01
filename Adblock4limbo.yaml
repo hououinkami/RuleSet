@@ -11,18 +11,18 @@ payload:
   - DOMAIN-KEYWORD, brushshopy
   - DOMAIN-KEYWORD, onenews
   - DOMAIN-SUFFIX, s96.cnzz.com
-#  - #DOMAIN-SUFFIX, yabo729.com
-  - #DOMAIN-SUFFIX, yabo729.com
+#  - DOMAIN-SUFFIX, yabo729.com
+  - #  - DOMAIN-SUFFIX, yabo729.com
   - DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i:4443
-#  - #DOMAIN-KEYWORD, xn--2qux23c9ziyrq
-  - #DOMAIN-KEYWORD, xn--2qux23c9ziyrq
+#  - DOMAIN-KEYWORD, xn--2qux23c9ziyrq
+  - #  - DOMAIN-KEYWORD, xn--2qux23c9ziyrq
   - DOMAIN-SUFFIX, xn--3bs795g.zone
   - DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus
   - DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club
   - DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i
   - DOMAIN-SUFFIX, ddmax20.xyz
-#  - #DOMAIN-SUFFIX, www.avple.video
-  - #DOMAIN-SUFFIX, www.avple.video
+#  - DOMAIN-SUFFIX, www.avple.video
+  - #  - DOMAIN-SUFFIX, www.avple.video
   - DOMAIN-SUFFIX, xn--3bs795g.link
   - DOMAIN-SUFFIX, show.suning.beer
   - DOMAIN-SUFFIX, www.govshenzhen.cn
@@ -33,15 +33,15 @@ payload:
   - DOMAIN-SUFFIX, ad.pornimg.xyz
   - DOMAIN-SUFFIX, yandex.ru
   - DOMAIN-SUFFIX, awaitcola.com
-#  - #DOMAIN-SUFFIX, jsdelivr.net
-  - #DOMAIN-SUFFIX, jsdelivr.net
+#  - DOMAIN-SUFFIX, jsdelivr.net
+  - #  - DOMAIN-SUFFIX, jsdelivr.net
   - DOMAIN-SUFFIX, wine-api.net
-#  - #DOMAIN-KEYWORD, wixsite.com
-  - #DOMAIN-KEYWORD, wixsite.com
+#  - DOMAIN-KEYWORD, wixsite.com
+  - #  - DOMAIN-KEYWORD, wixsite.com
   - DOMAIN-SUFFIX, exosrv.com
   - DOMAIN-SUFFIX, juicyads.com
-#  - #DOMAIN-SUFFIX, wixstatic.com
-  - #DOMAIN-SUFFIX, wixstatic.com
+#  - DOMAIN-SUFFIX, wixstatic.com
+  - #  - DOMAIN-SUFFIX, wixstatic.com
   - DOMAIN-SUFFIX, thumb.fvs.io
   - DOMAIN-SUFFIX, itnuzleafan.com
   - DOMAIN-SUFFIX, oawhaursaith.com
@@ -61,19 +61,19 @@ payload:
   - DOMAIN-SUFFIX, poweredby.jads.co
   - DOMAIN-SUFFIX, jads.co
   - DOMAIN-SUFFIX, exdynsrv.com
-#  - #DOMAIN-SUFFIX, cloudfront.net
-  - #DOMAIN-SUFFIX, cloudfront.net
+#  - DOMAIN-SUFFIX, cloudfront.net
+  - #  - DOMAIN-SUFFIX, cloudfront.net
   - DOMAIN-SUFFIX, d227cncaprzd7y.cloudfront.net
   - DOMAIN-SUFFIX, d10lumateci472.cloudfront.net
   - DOMAIN-SUFFIX, new.xiongzhangad.com
   - DOMAIN-SUFFIX, dvzk66.cn
   - DOMAIN-SUFFIX, pu0glv.cn
-#  - #DOMAIN-SUFFIX, ads.bullionyield.com
-  - #DOMAIN-SUFFIX, ads.bullionyield.com
+#  - DOMAIN-SUFFIX, ads.bullionyield.com
+  - #  - DOMAIN-SUFFIX, ads.bullionyield.com
   - DOMAIN-KEYWORD, dlads
   - DOMAIN, dagonghuzhu.com
-#  - #DOMAIN-SUFFIX, byteimg.com
-  - #DOMAIN-SUFFIX, byteimg.com
+#  - DOMAIN-SUFFIX, byteimg.com
+  - #  - DOMAIN-SUFFIX, byteimg.com
   - DOMAIN-KEYWORD, xxshuyuan
   - DOMAIN-KEYWORD, haowanyou
   - DOMAIN-SUFFIX, imgxxx.shunxincar.cn
@@ -109,8 +109,8 @@ payload:
   - DOMAIN-KEYWORD, highwebmedia
   - DOMAIN-KEYWORD, jads
   - DOMAIN-KEYWORD, trwl1
-#  - #DOMAIN-KEYWORD, vidoza
-  - #DOMAIN-KEYWORD, vidoza
+#  - DOMAIN-KEYWORD, vidoza
+  - #  - DOMAIN-KEYWORD, vidoza
   - DOMAIN-KEYWORD, o333o
   - DOMAIN-SUFFIX, ad.pornimg.xyz
   - DOMAIN-SUFFIX, x2sfa.javgg.eu
