@@ -1,0 +1,11 @@
+#ceshi 
+
+# > PlayStation
+DOMAIN-SUFFIX,prod.dl.playstation.net
+DOMAIN-SUFFIX,update.playstation.net
+
+# > nintendo
+DOMAIN-SUFFIX,d4c.nintendo.net
+
+# > 捷停车
+DOMAIN-SUFFIX,s4.cnzz.com
