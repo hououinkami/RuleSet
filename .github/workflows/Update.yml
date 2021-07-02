@@ -5,7 +5,7 @@ on:
     branches:
       - master
     path:
-      - .yml
+      - .*
   release:
     types: [published]
   schedule:
