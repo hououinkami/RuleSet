@@ -83,8 +83,10 @@ jobs:
           payload:
           " $f > ${f%%.*}.tmp
           awk '
+          /^\s*$/
           {
             if ($0~/payload/) {print $0};
+            if ($0~/\#/) {print $0};
             if ($0!~/payload|\#/) {print "  - " $0};
           }
           ' ${f%%.*}.tmp>Clash/${f%%.*}.yaml
