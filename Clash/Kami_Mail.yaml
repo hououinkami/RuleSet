@@ -1,5 +1,4 @@
 payload:
-  # > 邮箱
   - DOMAIN-SUFFIX,imap.mail.yahoo.co.jp
   - DOMAIN-SUFFIX,smtp.mail.yahoo.co.jp
   - DOMAIN-SUFFIX,imap.gmail.com
