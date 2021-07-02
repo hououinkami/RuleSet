@@ -1,17 +1,12 @@
 payload:
-  # > Apple Music Radio
   - DOMAIN,radio.itunes.apple.com
   - DOMAIN,radio-activity.itunes.apple.com
-
-  # > Apple Music MV
+  - 
   - DOMAIN,mvod.itunes.apple.com
-
-  # > Apple Music本地歌曲上传
+  - 
   - DOMAIN,store-033.blobstore.apple.com
-
-  # > macOS App启动速度优化
+  - 
   - DOMAIN,ocsp.apple.com
   - DOMAIN,ocsp.sectigo.com
-
-  # Hammerspoon
+  - 
   - DOMAIN-SUFFIX,hammerspoon.org
