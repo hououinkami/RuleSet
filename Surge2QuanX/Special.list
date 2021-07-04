@@ -14,6 +14,7 @@ DOMAIN,swcdn.apple.com,🌐 直连
 DOMAIN,updates-http.cdn-apple.com,🌐 直连
 DOMAIN-SUFFIX,ls.apple.com,🌐 直连
 DOMAIN-SUFFIX,mzstatic.com,🌐 直连
+USER-AGENT,duet*,🌐 直连
 DOMAIN-KEYWORD,epicgames,🌐 直连
 DOMAIN-KEYWORD,mtalk.google.com,🌐 直连
 DOMAIN,safebrowsing.googleapis.com,🌐 直连
