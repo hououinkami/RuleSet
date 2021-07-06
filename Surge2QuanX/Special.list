@@ -19,6 +19,7 @@ DOMAIN-KEYWORD,epicgames,🌐 直连
 DOMAIN-KEYWORD,mtalk.google.com,🌐 直连
 DOMAIN,safebrowsing.googleapis.com,🌐 直连
 DOMAIN-SUFFIX,dl.google.com,🌐 直连
+USER-AGENT,Microsoft%20Remote%20Desktop*,🌐 直连
 DOMAIN-SUFFIX,msftconnecttest.com,🌐 直连
 DOMAIN-SUFFIX,windows.com,🌐 直连
 DOMAIN-SUFFIX,windows.net,🌐 直连
