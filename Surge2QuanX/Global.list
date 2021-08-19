@@ -662,6 +662,8 @@ DOMAIN-SUFFIX,webmproject.org,🌍 代理
 DOMAIN-SUFFIX,webrtc.org,🌍 代理
 DOMAIN-SUFFIX,v2ex.com,🌍 代理
 DOMAIN-KEYWORD,dlercloud,🌍 代理
+DOMAIN-SUFFIX,wheel-size.cn,🌍 代理
+DOMAIN-SUFFIX,chalungu.cn,🌍 代理
 IP-CIDR,13.32.0.0/16,🌍 代理
 IP-CIDR,13.33.0.0/16,🌍 代理
 IP-CIDR,13.35.0.0/17,🌍 代理
