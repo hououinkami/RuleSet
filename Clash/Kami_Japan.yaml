@@ -8,3 +8,5 @@ payload:
   - DOMAIN-SUFFIX,playstation.net
   - DOMAIN-SUFFIX,playstationnetwork.com
   - DOMAIN-SUFFIX,sonyentertainmentnetwork.com
+# > 日本电视台直播
+  - DOMAIN-SUFFIX,203.162.235.41
