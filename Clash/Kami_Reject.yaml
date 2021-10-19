@@ -1,4 +1,4 @@
-payload:
+  payload:
 # > 科沃斯App
   - DOMAIN-SUFFIX,recommender.ecovacs.com
   - DOMAIN-SUFFIX,recommender.ecovacs.cn

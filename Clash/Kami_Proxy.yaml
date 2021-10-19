@@ -1,4 +1,4 @@
-payload:
+  payload:
 # > Apple Music Radio
   - DOMAIN,radio.itunes.apple.com
   - DOMAIN,radio-activity.itunes.apple.com

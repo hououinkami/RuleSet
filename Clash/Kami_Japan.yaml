@@ -1,4 +1,4 @@
-payload:
+  payload:
 # > Google
   - DOMAIN-SUFFIX,google.com
 # > YouTube
