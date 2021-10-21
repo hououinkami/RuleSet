@@ -56,7 +56,7 @@ jobs:
           gsub("HK","JP");
           print $0;
         }
-        ' $SOURCE_limbo_NAME>Geo_Services.sgmodule
+        ' SOURCE_Geo_NAME>Geo_Services.sgmodule
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
@@ -67,7 +67,7 @@ jobs:
             print $0;
           };
         }
-        ' SOURCE_Geo_NAME>Adblock4limbo.list
+        ' $SOURCE_limbo_NAME>Adblock4limbo.list
 
     - name: 生成RuleSet_for_Clash_Adblock4limbo
       run : |
