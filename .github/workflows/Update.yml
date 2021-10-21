@@ -19,6 +19,9 @@ env:
   TELEGRAM_NOTIFICATION_CONTENT: <b>🚫 anti-ADルール更新しました！</b>
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
   SOURCE_limbo_NAME: limbo.tmp
+  SOURCE_Geo: https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule
+  SOURCE_Geo_NAME: Geo.tmp
+
 
 jobs:
   UpdateRule:
@@ -46,6 +49,15 @@ jobs:
       run : |
         wget $SOURCE_limbo -O $SOURCE_limbo_NAME
     
+    - name: 生成日本区域定位修改
+      run : |
+        awk '
+        {
+          gsub("HK","JP");
+          print $0;
+        }
+        ' $SOURCE_limbo_NAME>Geo_Services.sgmodule
+
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
         awk '
@@ -55,7 +67,7 @@ jobs:
             print $0;
           };
         }
-        ' $SOURCE_limbo_NAME>Adblock4limbo.list
+        ' SOURCE_Geo_NAME>Adblock4limbo.list
 
     - name: 生成RuleSet_for_Clash_Adblock4limbo
       run : |
