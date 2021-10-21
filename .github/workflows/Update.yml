@@ -57,7 +57,7 @@ jobs:
           gsub("HK","JP");
           print $0;
         }
-        ' SOURCE_Geo_NAME>Geo_Services.sgmodule
+        ' $SOURCE_Geo_NAME>Geo_Services.sgmodule
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
