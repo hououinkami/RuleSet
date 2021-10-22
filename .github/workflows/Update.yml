@@ -19,10 +19,6 @@ env:
   TELEGRAM_NOTIFICATION_CONTENT: <b>🚫 anti-ADルール更新しました！</b>
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
   SOURCE_limbo_NAME: limbo.tmp
-  SOURCE_Geo: https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule
-  SOURCE_Geo_NAME: Geo.tmp
-  SOURCE_Geo_JS: https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js
-  SOURCE_Geo_JS_NAME: GeoJS.tmp
 
 
 jobs:
@@ -55,19 +51,30 @@ jobs:
     
     - name: 生成日本区域定位修改
       run : |
+        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js -O Geo_Services_JS.tmp
         awk '
         {
           gsub("US","JP");
           print $0;
         }
-        ' $SOURCE_Geo_JS_NAME>Geo_Services.js
+        ' Geo_Services_JS.tmp>Geo_Services.js
 
+        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule -O Geo_Services.tmp
         awk '
         {
           gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/Geo_Services\.js");
           print $0;
         }
-        ' $SOURCE_Geo_NAME>Geo_Services.sgmodule
+        ' Geo_Services.tmp>Geo_Services.sgmodule
+
+        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Siri_Suggestions_noRuleSet.sgmodule -O Siri_Suggestions.tmp
+        awk '
+        {
+          gsub("zh-Hans_CN","ja_JP");
+          gsub("TW","JP");
+          print $0;
+        }
+        ' Siri_Suggestions.tmp>Siri_Suggestions.sgmodule
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
