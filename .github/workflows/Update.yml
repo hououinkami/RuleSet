@@ -19,7 +19,7 @@ env:
   TELEGRAM_NOTIFICATION_CONTENT: <b>🚫 anti-ADルール更新しました！</b>
   SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
   SOURCE_limbo_NAME: limbo.tmp
-  SOURCE_Geo: https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule
+  SOURCE_Geo: https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js
   SOURCE_Geo_NAME: Geo.tmp
 
 
@@ -54,10 +54,10 @@ jobs:
       run : |
         awk '
         {
-          gsub("HK","JP");
+          gsub("US","JP");
           print $0;
         }
-        ' $SOURCE_Geo_NAME>Geo_Services.sgmodule
+        ' $SOURCE_Geo_NAME>Geo_Services.js
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
