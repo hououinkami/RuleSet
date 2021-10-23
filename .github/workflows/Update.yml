@@ -47,24 +47,27 @@ jobs:
       run : |
         wget $SOURCE_limbo -O $SOURCE_limbo_NAME
     
-    - name: 生成日本区域定位修改
+    - name: 生成Apple解锁相关文件
       run : |
+        # 定位修改为日本
         wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js -O Geo_Services_JS.tmp
         awk '
         {
           gsub("US","JP");
           print $0;
         }
-        ' Geo_Services_JS.tmp>Geo_Services.js
+        ' Geo_Services_JS.tmp>AppleUnlock/Geo_Services.js
 
+        # 定位修改模块
         wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule -O Geo_Services.tmp
         awk '
         {
-          gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/Geo_Services\.js");
+          gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/AppleUnlock\/Geo_Services\.js");
           print $0;
         }
-        ' Geo_Services.tmp>Geo_Services.sgmodule
+        ' Geo_Services.tmp>AppleUnlock/Geo_Services.sgmodule
 
+        # Siri搜索建议解锁且设置语言为日语
         wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Siri_Suggestions_noRuleSet.sgmodule -O Siri_Suggestions.tmp
         awk '
         {
@@ -72,7 +75,7 @@ jobs:
           gsub("TW","JP");
           print $0;
         }
-        ' Siri_Suggestions.tmp>Siri_Suggestions.sgmodule
+        ' Siri_Suggestions.tmp>AppleUnlock/Siri_Suggestions.sgmodule
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
