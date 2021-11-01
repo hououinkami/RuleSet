@@ -67,6 +67,14 @@ jobs:
         }
         ' Geo_Services.tmp>AppleUnlock/Geo_Services.sgmodule
 
+        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Geo_Services.qxrewrite -O Geo_Services2.tmp
+        awk '
+        {
+          gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/AppleUnlock\/Geo_Services\.js");
+          print $0;
+        }
+        ' Geo_Services2.tmp>AppleUnlock/Geo_Services.qxrewrite
+
         # Siri搜索建议解锁且设置语言为日语
         wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Siri_Suggestions_noRuleSet.sgmodule -O Siri_Suggestions.tmp
         awk '
@@ -76,6 +84,15 @@ jobs:
           print $0;
         }
         ' Siri_Suggestions.tmp>AppleUnlock/Siri_Suggestions.sgmodule
+
+        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Siri_Suggestions_TW.qxrewrite -O Siri_Suggestions2.tmp
+        awk '
+        {
+          gsub("zh-Hans_CN","ja_JP");
+          gsub("TW","JP");
+          print $0;
+        }
+        ' Siri_Suggestions2.tmp>AppleUnlock/Siri_Suggestions.qxrewrite
 
     - name: 生成RuleSet_for_Surgio_Adblock4limbo
       run : |
