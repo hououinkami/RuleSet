@@ -48,10 +48,10 @@ jobs:
 
     - name: 生成神机规则General
       run : |
-        awk '/\[/{f=0} f; /Redirect HTTP to HTTPS/{f=1}' General.tmp>tmp.tmp
+        awk '/Redirect HTTP to HTTPS/{f=1} /^(\[)/{f=0} f' General.tmp>tmp.tmp
         awk NF tmp.tmp>url_rewrite1.tmp
 
-        awk '/\[/{f=0} f; /\[Script\]/{f=1}' General.tmp>tmp.tmp
+        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' General.tmp>tmp.tmp
         awk NF tmp.tmp>script1.tmp
 
         awk '
@@ -76,13 +76,13 @@ jobs:
         }
         ' Advertising.tmp>force-http-engine-hosts2.tmp
 
-        awk '/\[/{f=0} f; /\[Rule\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' Advertising.tmp>tmp.tmp
         awk NF tmp.tmp>rule2.tmp
 
-        awk '/\[/{f=0} f; /\[URL Rewrite\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' Advertising.tmp>tmp.tmp
         awk NF tmp.tmp>url_rewrite2.tmp
 
-        awk '/\[/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
         awk NF tmp.tmp>map_local2.tmp
 
         awk '
@@ -93,7 +93,7 @@ jobs:
             {exit}; 
           }      
         }
-        ' Advertising.tmp>hostname2.tpl
+        ' Advertising.tmp>hostname2.tmp
 
     - name: 合并文件
       run : |
@@ -102,8 +102,8 @@ jobs:
         cat url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat script*.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        cat hostname*.tmp > Surge/hostname.tpl
-
+        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' hostname*.tmp > Surge/hostname.tpl
+        
     - name: 删除临时文件
       run : |
         rm *.tmp
