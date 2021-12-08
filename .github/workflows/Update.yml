@@ -16,9 +16,7 @@ on:
 env:
   TZ: Asia/Shanghai
   TELEGRAM_NOTIFICATION: false
-  TELEGRAM_NOTIFICATION_CONTENT: <b>🚫 anti-ADルール更新しました！</b>
-  SOURCE_limbo: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
-  SOURCE_limbo_NAME: limbo.tmp
+  TELEGRAM_NOTIFICATION_CONTENT: <b>ルール更新しました！</b>
 
 
 jobs:
@@ -45,204 +43,66 @@ jobs:
     
     - name: 获取最新源
       run : |
-        wget $SOURCE_limbo -O $SOURCE_limbo_NAME
-    
-    - name: 生成Apple解锁相关文件
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
+
+    - name: 生成神机规则General
       run : |
-        # 定位修改为日本
-        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Geo_Services.js -O Geo_Services_JS.tmp
-        awk '
-        {
-          gsub("US","JP");
-          print $0;
-        }
-        ' Geo_Services_JS.tmp>AppleUnlock/Geo_Services.js
+        awk '/\[/{f=0} f; /Redirect HTTP to HTTPS/{f=1}' General.tmp>tmp.tmp
+        awk NF tmp.tmp>url_rewrite1.tmp
 
-        # 定位修改模块
-        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Geo_Services.sgmodule -O Geo_Services.tmp
-        awk '
-        {
-          gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/AppleUnlock\/Geo_Services\.js");
-          print $0;
-        }
-        ' Geo_Services.tmp>AppleUnlock/Geo_Services.sgmodule
+        awk '/\[/{f=0} f; /\[Script\]/{f=1}' General.tmp>tmp.tmp
+        awk NF tmp.tmp>script1.tmp
 
-        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Geo_Services.qxrewrite -O Geo_Services2.tmp
         awk '
         {
-          gsub("VirgilClyne\/iRingo\/main\/js\/Geo_Services\.js","hououinkami\/RuleSet\/master\/AppleUnlock\/Geo_Services\.js");
-          print $0;
-        }
-        ' Geo_Services2.tmp>AppleUnlock/Geo_Services.qxrewrite
-
-        # Siri搜索建议解锁且设置语言为日语
-        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Siri_Suggestions_noRuleSet.sgmodule -O Siri_Suggestions.tmp
-        awk '
-        {
-          gsub("zh-Hans_CN","ja_JP");
-          gsub("TW","JP");
-          print $0;
-        }
-        ' Siri_Suggestions.tmp>AppleUnlock/Siri_Suggestions.sgmodule
-
-        wget https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Siri_Suggestions_TW.qxrewrite -O Siri_Suggestions2.tmp
-        awk '
-        {
-          gsub("zh-Hans_CN","ja_JP");
-          gsub("TW","JP");
-          print $0;
-        }
-        ' Siri_Suggestions2.tmp>AppleUnlock/Siri_Suggestions.qxrewrite
-
-    - name: 生成RuleSet_for_Surgio_Adblock4limbo
-      run : |
-        awk '
-        {
-          if($0~/, reject/) {
-            gsub(", reject","");
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","   ");
             print $0;
-          };
+            {exit}; 
+          }      
         }
-        ' $SOURCE_limbo_NAME>Adblock4limbo.list
-
-    - name: 生成RuleSet_for_Clash_Adblock4limbo
+        ' General.tmp>hostname1.tmp
+    
+    - name: 生成神机规则Advertising
       run : |
-        cp Adblock4limbo.list Adblock4limbo1.tmp
-        sed "1 i\   
-        payload:
-        " Adblock4limbo1.tmp > Adblock4limbo2.tmp
         awk '
         {
-          if ($0~/payload/) {print $0};
-          if ($0~/\#/) {
-            gsub(/\#/, "\#  - ");
+          if($0~/force-http-engine-hosts/) {
+            gsub("force-http-engine-hosts = %APPEND% ","");
             print $0;
-          };
-          if ($0!~/payload|\#/) {print "  - " $0};
+            {exit};
+          }      
         }
-        ' Adblock4limbo2.tmp>Clash/Adblock4limbo.yaml
-    
-    - name: 生成RuleSet_for_Clash
-      run : |
-        FILES=*.list
-        for f in $FILES
-        do
-          sed "1 i\   
-          payload:
-          " $f > ${f%%.*}.tmp
-          awk '
-          {
-            if ($0~/payload/) {print $0};
-            if ($0~/\#/) {print $0};
-            if ($0!~/payload|\#/ && $0!="") {print "  - " $0};
-          }
-          ' ${f%%.*}.tmp>Clash/${f%%.*}.yaml
-        done    
-    
-    - name: 生成Special
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Special.list -O Special.tmp
+        ' Advertising.tmp>force-http-engine-hosts2.tmp
+
+        awk '/\[/{f=0} f; /\[Rule\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk NF tmp.tmp>rule2.tmp
+
+        awk '/\[/{f=0} f; /\[URL Rewrite\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk NF tmp.tmp>url_rewrite2.tmp
+
+        awk '/\[/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
+        awk NF tmp.tmp>map_local2.tmp
+
         awk '
         {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve","");
-            print $0",🌐 直连"
-          }
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","   ");
+            print $0;
+            {exit}; 
+          }      
         }
-        ' Special.tmp>Surge2QuanX/Special.list
+        ' Advertising.tmp>hostname2.tpl
 
-    - name: 生成Reject
+    - name: 合并文件
       run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Reject.list -O Reject.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",🚫 屏蔽"
-          }
-        }
-        ' Reject.tmp>Surge2QuanX/Reject.list
-
-    - name: 生成YouTube
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Media/YouTube.list -O YouTube.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",🎬 YouTube"
-          }
-        }
-        ' YouTube.tmp>Surge2QuanX/YouTube.list
-
-    - name: 生成Speedtest
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Speedtest.list -O Speedtest.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",⏲ Speedtest"
-          }
-        }
-        ' Speedtest.tmp>Surge2QuanX/Speedtest.list
-
-    - name: 生成Global
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Proxy.list -O Global.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",🌍 代理"
-          }
-        }
-        ' Global.tmp>Surge2QuanX/Global.list
-
-    - name: 生成Apple
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Apple.list -O Apple.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",🍎 Apple"
-          }
-        }
-        ' Apple.tmp>Surge2QuanX/Apple.list
-
-    - name: 生成China
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Domestic.list -O China.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            gsub("IP-CIDR6","ip6-cidr");
-            print $0",🌐 直连"
-          }
-        }
-        ' China.tmp>Surge2QuanX/China.list
-
-    - name: 生成ChinaIP
-      run : |
-        wget https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Domestic%20IPs.list -O ChinaIP.tmp
-        awk '
-        {
-          if($0~/,/ && $0!~/PROCESS-NAME|URL-REGEX/) {
-            gsub(",no-resolve",""); 
-            print $0",🌐 直连"
-          }
-        }
-        ' ChinaIP.tmp>Surge2QuanX/ChinaIP.list
-
-    - name: 生成Rewrite
-      run : |
-        wget https://raw.githubusercontent.com/Orz-3/QuantumultX/master/YouTube.conf -O Rewrite/YouTubeAD.conf
-        wget https://raw.githubusercontent.com/qiangxinglin/Emby/main/QuantumultX/emby.conf -O Rewrite/EMBY.conf
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf -O Rewrite/General.conf
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf -O Rewrite/Advertising.conf
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf -O Rewrite/AdvertisingPlus.conf
+        cat force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
+        cat rule*.tmp > Surge/rule.tpl
+        cat url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat script*.tmp > Surge/script.tpl
+        cat map_local*.tmp > Surge/map_local.tpl
+        cat hostname*.tmp > Surge/hostname.tpl
 
     - name: 删除临时文件
       run : |
