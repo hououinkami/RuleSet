@@ -17,6 +17,7 @@ env:
   TZ: Asia/Shanghai
   TELEGRAM_NOTIFICATION: false
   TELEGRAM_NOTIFICATION_CONTENT: <b>ルール更新しました！</b>
+  VER: all
 
 
 jobs:
@@ -45,10 +46,55 @@ jobs:
       run : |
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Classical.sgmodule -O all_Rwrite.tmp
+
+    - name: 生成整合规则hostname
+      run : |
+        awk '
+        {
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","   ");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' all_Advertising.tmp>all_hostname1.tmp
+    
+    - name: 生成整合规则Rewrite
+      run : |
+        awk '
+        {
+          if($0~/force-http-engine-hosts/) {
+            gsub("force-http-engine-hosts = %APPEND% ","");
+            print $0;
+            {exit};
+          }      
+        }
+        ' all_Rwrite.tmp>all_force-http-engine-hosts2.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>all_rule2.tmp
+
+        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>all_url_rewrite2.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>all_script2.tmp
+
+        awk '
+        {
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","   ");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' all_Rwrite.tmp>all_hostname2.tmp
 
     - name: 生成神机规则General
       run : |
-        awk '/Redirect HTTP to HTTPS/{f=1} /^(\[)/{f=0} f' General.tmp>tmp.tmp
+        awk '/Redirect Google Search Service/{f=1} /^(\[)/{f=0} f' General.tmp>tmp.tmp
         awk NF tmp.tmp>url_rewrite1.tmp
 
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' General.tmp>tmp.tmp
@@ -95,7 +141,17 @@ jobs:
         }
         ' Advertising.tmp>hostname2.tmp
 
-    - name: 合并文件
+    - name: 合并文件_all
+      if: env.VER == 'all' && !cancelled()
+      run : |
+        cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
+        cat all_rule*.tmp > Surge/rule.tpl
+        cat all_url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat all_script*.tmp > Surge/script.tpl
+        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname*.tmp > Surge/hostname.tpl
+
+    - name: 合并文件_shenji
+      if: env.VER == 'shenji' && !cancelled()
       run : |
         cat force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat rule*.tmp > Surge/rule.tpl
