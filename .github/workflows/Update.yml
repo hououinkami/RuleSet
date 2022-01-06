@@ -94,6 +94,16 @@ jobs:
 
     - name: 生成神机规则General
       run : |
+        awk '
+        {
+          if($0~/always-real-ip = \%APPEND\%/) {
+            gsub("always-real-ip = %APPEND%","   ");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' General.tmp>realip1.tmp
+
         awk '/Redirect Google Search Service/{f=1} /^(\[)/{f=0} f' General.tmp>tmp.tmp
         awk NF tmp.tmp>url_rewrite1.tmp
 
@@ -144,15 +154,18 @@ jobs:
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
+        cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat all_rule*.tmp > Surge/rule.tpl
         cat all_url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat all_script*.tmp > Surge/script.tpl
+        cat map_local*.tmp > Surge/map_local.tpl
         awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname*.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
       if: env.VER == 'shenji' && !cancelled()
       run : |
+        cat realip*.tmp > Surge/always-real-ip.tpl
         cat force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat rule*.tmp > Surge/rule.tpl
         cat url_rewrite*.tmp > Surge/url_rewrite.tpl
