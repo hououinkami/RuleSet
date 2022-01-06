@@ -54,7 +54,7 @@ jobs:
         awk '
         {
           if($0~/hostname = \%APPEND\%/) {
-            gsub("hostname = %APPEND%","   ");
+            gsub("hostname = %APPEND%","");
             print $0;
             {exit}; 
           }      
@@ -85,7 +85,7 @@ jobs:
         awk '
         {
           if($0~/hostname = \%APPEND\%/) {
-            gsub("hostname = %APPEND%","   ");
+            gsub("hostname = %APPEND%","");
             print $0;
             {exit}; 
           }      
@@ -97,7 +97,7 @@ jobs:
         awk '
         {
           if($0~/always-real-ip = \%APPEND\%/) {
-            gsub("always-real-ip = %APPEND%","   ");
+            gsub("always-real-ip = %APPEND%","");
             print $0;
             {exit}; 
           }      
@@ -113,7 +113,7 @@ jobs:
         awk '
         {
           if($0~/hostname = \%APPEND\%/) {
-            gsub("hostname = %APPEND%","   ");
+            gsub("hostname = %APPEND%","");
             print $0;
             {exit}; 
           }      
@@ -144,7 +144,7 @@ jobs:
         awk '
         {
           if($0~/hostname = \%APPEND\%/) {
-            gsub("hostname = %APPEND%","   ");
+            gsub("hostname = %APPEND%","");
             print $0;
             {exit}; 
           }      
