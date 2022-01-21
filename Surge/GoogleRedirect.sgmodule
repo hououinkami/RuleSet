@@ -1,0 +1,12 @@
+#!name=自用模块
+#!desc=Google重定位
+
+[URL Rewrite]
+# > Google重定位
+^https:\/\/(image|translate)\.google\.(cn|com)\.([a-z]{2})(.*) https://$1.google.com$4&gl=JP 302
+^https:\/\/(.*)\.google\.(cn|com)\/search(?!.*(gl=JP|vet)).*q=(([^&]+).+)$ https://$1.google.com/search?q=$4&gl=JP 302
+^(https:\/\/(.*)\.google\.(cn|com)).$ https://$2.google.com/?gl=JP 302
+# ^(https:\/\/www\.youtube\.com).$ https://www.youtube.com/?gl=JP 302
+
+[MITM]
+hostname = %APPEND% *.google.*, www.youtube.com
