@@ -1,4 +1,4 @@
-#!name=VIF Only
+#!name=TUN Only
 #!desc=启用兼容模式，用于某些无法通过Surge联网的App
 #!system=ios
 
