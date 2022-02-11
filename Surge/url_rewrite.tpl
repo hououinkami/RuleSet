@@ -299,7 +299,6 @@
 "^https?:\/\/ddrk\.me\/wp-content\/plugins\/advanced-floating-content-lite\/public\/images\/close\.png" - reject
 "^https?:\/\/dict-mobile\.iciba\.com\/interface\/index\.php\?.+?(c=ad|collectFeedsAdShowCount|KSFeedsAdCardViewController)" - reject
 "^https?:\/\/dili\.bdatu\.com\/jiekou\/ad\/" - reject
-"^https?:\/\/dimg04\.c-ctrip\.com\/images\/\w+(_\d{4}){2}" - reject
 "^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips\.js" - reject
 "^https?:\/\/dl.app.gtja.com/.+\d+.jpg$" - reject
 "^https?:\/\/dl\.app.gtja\.com\/.+?\d+\.jpg$" - reject
