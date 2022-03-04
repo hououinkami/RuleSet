@@ -101,7 +101,6 @@
 "^https?:\/\/api\.app\.vhall\.com\/v5\/000\/webinar\/launch" - reject
 "^https?:\/\/api\.applovefrom\.com\/api\/v\d\/splash\/" - reject
 "^https?:\/\/api\.appsdk\.soku\.com\/bg\/r" - reject
-"^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\?" - reject
 "^https?:\/\/api\.bjxkhc\.com\/index\.php\/app\/ios\/ads\/" - reject
 "^https?:\/\/api\.caijingmobile\.com\/(ad|advert)\/" - reject
 "^https?:\/\/api\.catch\.gift\/api\/v\d\/pagead\/" - reject
@@ -150,9 +149,6 @@
 "^https?:\/\/api\.rr\.tv\/ad\/" - reject
 "^https?:\/\/api\.smzdm\.com\/v2\/util\/banner" - reject
 "^https?:\/\/api\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap" - reject
-"^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist" - reject
-"^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words" - reject
-"^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr" - reject
 "^https?:\/\/api\.videozhishi\.com\/api\/getAdvertising" - reject
 "^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement" - reject
 "^https?:\/\/api\.vuevideo\.net\/api\/v\d\/ad\/" - reject
@@ -475,7 +471,6 @@
 "^https?:\/\/mage\.if\.qidian\.com\/Atom\.axd\/Api\/Client\/GetConfIOS" - reject
 "^https?:\/\/mage\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen" - reject
 "^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/" - reject
-"^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash" - reject
 "^https?:\/\/mangaapi\.manhuaren\.com\/v\d\/public\/getStartPageAds" - reject
 "^https?:\/\/mapi\.dangdang\.com\/index\.php\?action=init" - reject
 "^https?:\/\/mapi\.mafengwo\.cn\/ad\/" - reject
