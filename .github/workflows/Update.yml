@@ -47,7 +47,7 @@ jobs:
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Classical.sgmodule -O all_Rwrite.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule -O all_Rwrite.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
@@ -109,6 +109,9 @@ jobs:
           }      
         }
         ' all_Rwrite.tmp>all_hostname2.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>map_local1.tmp
 
     - name: 生成神机规则General
       run : |
