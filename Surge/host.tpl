@@ -23,4 +23,3 @@ tplogin.cn = server:syslib // TP-Link Router
 tplinklogin.net = server:syslib // TP-Link Router
 melogin.cn = server:syslib // MERCURY Router
 falogin.cn = server:syslib // FAST Router
-# 解锁了「模块」功能的用户可以使用 General.sgmodule 后可移除 [URL Rewrite] 及 [MITM] 的「hostname = www.google.cn,api.abema.io」部分
