@@ -3,7 +3,7 @@ name: 更新规则
 on:
   push:
     branches:
-      - master
+      - main
     path:
       - .*
   release:
