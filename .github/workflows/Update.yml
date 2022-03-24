@@ -62,7 +62,7 @@ jobs:
             print $0;
           }      
         }
-        ' tmp.tmp>all_host.tmp
+        ' tmp.tmp>host.tmp
         awk NF host.tmp > host.tpl
 
     - name: 生成整合规则hostname
