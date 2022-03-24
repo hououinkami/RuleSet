@@ -48,7 +48,7 @@ jobs:
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Classical.sgmodule -O all_Rwrite.tmp
-        curl -o shenji.tmp https://github.com/DivineEngine/Profiles/blob/master/Surge/Outbound.conf
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
@@ -56,7 +56,14 @@ jobs:
     - name: 生成神机规则host
       run : |
         awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.txt>tmp.tmp
-        awk NF tmp.tmp > host.tpl
+        awk '
+        {
+          if($0~/\# >/ || $0~/=/) {
+            print $0;
+          }      
+        }
+        ' tmp.tmp>all_host.tmp
+        awk NF host.tmp > host.tpl
 
     - name: 生成整合规则hostname
       run : |
