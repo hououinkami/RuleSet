@@ -63,7 +63,7 @@ jobs:
           }      
         }
         ' tmp.tmp>host.tmp
-        awk NF host.tmp > host.tpl
+        awk NF host.tmp > Surge/host.tpl
 
     - name: 生成整合规则hostname
       run : |
