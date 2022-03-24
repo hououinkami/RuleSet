@@ -51,6 +51,7 @@ jobs:
         wget https://github.com/DivineEngine/Profiles/blob/master/Surge/Outbound.conf -O shenji.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
+    # 过滤空白行
     # awk NF tmp.tmp>all_rule2.tmp
     - name: 生成整合规则hostname
       run : |
@@ -178,7 +179,7 @@ jobs:
 
     - name: 生成神机规则host
       run : |
-        awk '/[\u4e00-\u9fa5]/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
+        awk '/[^!-~]/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
         awk NF tmp.tmp > Surge/host.tpl
 
     - name: 删除临时文件
