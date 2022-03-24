@@ -53,6 +53,11 @@ jobs:
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
     # awk NF tmp.tmp>all_rule2.tmp
+    - name: 生成神机规则host
+      run : |
+        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
+        awk NF tmp.tmp > host.tmp
+
     - name: 生成整合规则hostname
       run : |
         awk '
@@ -158,6 +163,7 @@ jobs:
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
+        cat host.tmp > Surge/host.tpl
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat all_rule*.tmp > Surge/rule.tpl
@@ -169,6 +175,7 @@ jobs:
     - name: 合并文件_shenji
       if: env.VER == 'shenji' && !cancelled()
       run : |
+        cat host.tmp > Surge/host.tpl
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat rule*.tmp > Surge/rule.tpl
@@ -176,11 +183,6 @@ jobs:
         cat script*.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
         awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' hostname*.tmp > Surge/hostname.tpl
-
-    - name: 生成神机规则host
-      run : |
-        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
-        awk NF tmp.tmp > Surge/host.tpl
 
     - name: 删除临时文件
       run : |
