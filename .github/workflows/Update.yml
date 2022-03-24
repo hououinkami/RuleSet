@@ -180,14 +180,7 @@ jobs:
     - name: 生成神机规则host
       run : |
         awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
-        awk '
-        {
-          if($0~/\# >/ || $0~/=/) {
-            print $0;
-          }      
-        }
-        ' tmp.tmp>host.tmp
-        awk NF host.tmp > Surge/host.tpl
+        awk NF tmp.tmp > Surge/host.tpl
 
     - name: 删除临时文件
       run : |
