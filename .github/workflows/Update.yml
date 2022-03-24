@@ -55,7 +55,7 @@ jobs:
     # awk NF tmp.tmp>all_rule2.tmp
     - name: 生成神机规则host
       run : |
-        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.txt>tmp.tmp
+        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
         awk '
         {
           if($0~/\# >/ || $0~/=/) {
