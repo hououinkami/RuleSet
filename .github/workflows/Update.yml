@@ -59,7 +59,9 @@ jobs:
         awk '
         {
           if($0~/\# >/ || $0~/=/) {
-            print $0;
+            if($0!~/hostname/) {
+              print $0;
+            }
           }      
         }
         ' tmp.tmp>host.tmp
