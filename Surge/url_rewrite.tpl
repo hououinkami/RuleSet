@@ -1,3 +1,4 @@
+"^https:\/\/api-ks\.wtzw\.com\/api\/v(1|2)\/(float-adv|init-adv|reader-adv|bookshelf-adv|coopen-adv)" - reject
 "^https?:\/\/(\d{1,3}\.){3}\d{1,3}/(variety|vlive\.qqvideo)\.tc\.qq\.com/" - reject
 "^https?:\/\/(a?d|sax)\d.sina.com" - reject
 "^https?:\/\/(api-mifit|api-mifit-\w+)\.huami\.com\/discovery\/mi\/discovery\/\w+_ad\?" - reject
@@ -53,7 +54,6 @@
 "^https?:\/\/adpai\.thepaper\.cn\/.+?&ad=" - reject
 "^https?:\/\/aes\.acfun\.cn\/s\?adzones" - reject
 "^https?:\/\/agent-count\.pconline\.com\.cn\/counter\/adAnalyse\/" - reject
-"^https?:\/\/api-ks\.wtzw\.com\/api\/v(1|2)\/(float-adv|init-adv|reader-adv)" - reject
 "^https?:\/\/api-mifit\.huami\.com\/(discovery\/mi\/discovery\/(homepage|sleep|sport(_(summary|training))?|step_detail|training_video)_ad|v1\/app\/startpages\.json)\?" - reject
 "^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/" - reject
 "^https?:\/\/api-release\.wuta-cam\.com\/ad_tree" - reject
