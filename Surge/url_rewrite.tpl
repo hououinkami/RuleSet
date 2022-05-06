@@ -12,7 +12,6 @@
 "^https?:\/\/.+?\.iydsj\.com\/api\/.+?\/ad" - reject
 "^https?:\/\/.+?\.ott\.cibntv\.net\/[\w\/-]+.mp4\?sid=" - reject
 "^https?:\/\/.+?\.pstatp\.com\/img\/ad" - reject
-"^https?:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/" - reject
 "^https?:\/\/.+?\.tc\.qq\.com\/.+?_p20\d_" - reject
 "^https?:\/\/.+?\.tc\.qq\.com\/.+?p20\d\.1\.mp4\?" - reject
 "^https?:\/\/101\.201\.175\.228\/ads\/display" - reject
@@ -24,8 +23,6 @@
 "^https?:\/\/47\.97\.20\.12\/ad\/" - reject
 "^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/" - reject
 "^https?:\/\/7n\.bczcdn\.com\/launchad\/" - reject
-"^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/ad\/" - reject
-"^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/" - reject
 "^https?:\/\/[^bbs].tianya\.cn" - reject
 "^https?:\/\/\w+?\.ximalaya\.com\/api\/v\d\/adRealTime" - reject
 "^https?:\/\/\w+\.beacon\.qq\.com" - reject
