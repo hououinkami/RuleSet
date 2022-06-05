@@ -204,7 +204,6 @@ jobs:
           gsub("🇹🇼 sub-policy","🇨🇳 台湾");
           gsub("🏁 sub-policy","🇭🇰 香港");
           print $0;
-          };
         }
         ' biliauto.tmp>Surge/js/Bili_Auto_Regions.js
       
