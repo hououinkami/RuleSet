@@ -49,6 +49,7 @@ jobs:
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule -O all_Rwrite.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
@@ -172,16 +173,37 @@ jobs:
         }
         ' Advertising.tmp>hostname2.tmp
 
+    - name: 生成Bilibili规则
+      run : |
+        awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' bili.tmp>tmp.tmp
+        awk NF tmp.tmp>bili_rule.tmp
+
+        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>bili_url_rewrite.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>bili_script.tmp
+
+        awk '
+        {
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' all_Rwrite.tmp>bili_hostname.tmp
+
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
-        cat all_rule*.tmp > Surge/rule.tpl
-        cat all_url_rewrite*.tmp > Surge/url_rewrite.tpl
-        cat all_script*.tmp > Surge/script.tpl
+        cat all_rule*.tmp bili_rule.tmp > Surge/rule.tpl
+        cat all_url_rewrite*.tmp bili_url_rewrite.tmp > Surge/url_rewrite.tpl
+        cat all_script*.tmp bili_script.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname*.tmp > Surge/hostname.tpl
+        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname*.tmp bili_hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
       if: env.VER == 'shenji' && !cancelled()
