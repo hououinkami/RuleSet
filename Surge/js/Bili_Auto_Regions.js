@@ -77,7 +77,7 @@ let run = EnvInfo();
 
 async function SwitchRegion(play) {
 	const Group = $.read('BiliArea_Policy') || '📺 Bilibili'; //Your blibli policy group name.
-	const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
+	const CN = $.read('BiliArea_CN') || '🌐 直连'; //Your China sub-policy name.
 	const TW = $.read('BiliArea_TW') || '🇨🇳 台湾'; //Your Taiwan sub-policy name.
 	const HK = $.read('BiliArea_HK') || '🇭🇰 香港'; //Your HongKong sub-policy name.
 	const DF = $.read('BiliArea_DF') || '🇭🇰 香港'; //Sub-policy name used after region is blocked(e.g. url 404)
@@ -95,7 +95,7 @@ async function SwitchRegion(play) {
 		} else if (current != CN) {
 			select = CN;
 		}
-		if ($.isQuanX && current === 'direct' && select === 'DIRECT') {
+		if ($.isQuanX && current === 'direct' && select === '🌐 直连') {
 			select = null; //avoid loops in some cases
 		}
 		return select;
