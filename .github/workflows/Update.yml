@@ -218,7 +218,7 @@ jobs:
         cat all_script*.tmp bili_script.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
         cat all_hostname*.tmp bili_hostname.tmp > hostname.tmp
-        awk 'NR == 1 {p = $0} NR > 1 {print p; p = $0} END{printf p} ' hostname.tmp > Surge/hostname.tpl
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
       if: env.VER == 'shenji' && !cancelled()
