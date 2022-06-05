@@ -200,7 +200,7 @@ jobs:
         awk '
         {
           gsub("📺 DomesticMedia","📺 Bilibili");
-          gsub(/DIRECT\';/,"🌐 直连");
+          gsub(/DIRECT\'\;/,"🌐 直连");
           gsub("🇭🇰 sub-policy","🇭🇰 香港");
           gsub("🇹🇼 sub-policy","🇨🇳 台湾");
           gsub("🏁 sub-policy","🇭🇰 香港");
