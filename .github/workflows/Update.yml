@@ -192,7 +192,7 @@ jobs:
             {exit}; 
           }      
         }
-        ' bili.tmp>all2_hostname3.tmp
+        ' bili.tmp>bili_hostname.tmp
 
     - name: Bilibili自动切换
       run : |
@@ -217,7 +217,8 @@ jobs:
         cat all_url_rewrite*.tmp bili_url_rewrite.tmp > Surge/url_rewrite.tpl
         cat all_script*.tmp bili_script.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname*.tmp > Surge/hostname.tpl
+        cat all_hostname*.tmp bili_hostname.tmp > all_hostname.tmp
+        awk 'NR==FNR {a[FNR]=$0} NR>FNR {print a[FNR],"'",  "'",$0}' all_hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
       if: env.VER == 'shenji' && !cancelled()
