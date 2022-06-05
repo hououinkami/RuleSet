@@ -192,7 +192,7 @@ jobs:
             {exit}; 
           }      
         }
-        ' bili.tmp>all_hostname3.tmp
+        ' bili.tmp>all2_hostname3.tmp
 
     - name: Bilibili自动切换
       run : |
