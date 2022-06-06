@@ -213,11 +213,11 @@ jobs:
       run : |
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
-        cat all_rule*.tmp bili_rule.tmp > Surge/rule.tpl
-        cat all_url_rewrite*.tmp bili_url_rewrite.tmp > Surge/url_rewrite.tpl
-        cat all_script*.tmp bili_script.tmp > Surge/script.tpl
+        cat all_rule*.tmp > Surge/rule.tpl
+        cat all_url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat all_script*.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        cat all_hostname*.tmp bili_hostname.tmp > hostname.tmp
+        cat all_hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
