@@ -6,7 +6,6 @@
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https?:\/\/you\.163\.com\/" https://you.163.com/ 302
-"^https:\/\/heic\.alicdn\.com\/imgextra.*\.heic" - reject
 "^https?:\/\/(api|api-bk\d+)\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap" - reject
 "^https?:\/\/(api|b)\.zhuishushenqi\.com\/advert" - reject
 "^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/" - reject
@@ -373,18 +372,6 @@
 "^https?:\/\/xyst\.yuanfudao\.com\/iphone\/splashesV\d" - reject
 "^https?:\/\/xyz\.cnki\.net\/resourcev7\/api\/manualpush\/SlidsList$" - reject
 "^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/" - reject
-"^https?:\/\/yxhd\.hori-gz\.com\/\/jfmsApi\/commandWord\/commandWordInfo" - reject
 "^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/" - reject
 "^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
-# 去除搜索中的大家都在搜
-^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject
-# 去除动态中的话题
-^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr - reject
-# 去除动态中的最常访问
-^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist - reject
-# 可能的一些推广(beta)
-^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? - reject
-# BiliBili漫画去广告
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash - reject
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash - reject
