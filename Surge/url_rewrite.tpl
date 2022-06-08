@@ -8,6 +8,9 @@
 "^https?:\/\/you\.163\.com\/" https://you.163.com/ 302
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
 "^https:\/\/heic\.alicdn\.com\/imgextra.*\.heic" - reject
+"^https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/" - reject
+"^https?://gab\.122\.gov\.cn/eapp/m/sysquery" - reject
+"^https?://zone\.guiderank-app\.com/guiderank-web/app/ad/listLaunchADByCity\.do" - reject
 "^https?:\/\/(api|api-bk\d+)\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap" - reject
 "^https?:\/\/(api|b)\.zhuishushenqi\.com\/advert" - reject
 "^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/" - reject
