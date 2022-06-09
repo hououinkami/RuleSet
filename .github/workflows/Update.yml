@@ -50,6 +50,7 @@ jobs:
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule -O all_Rwrite.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/YouTubeAds.sgmodule -O youtube_ad.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
@@ -173,6 +174,21 @@ jobs:
         }
         ' Advertising.tmp>hostname2.tmp
 
+    - name: 生成YouTube广告屏蔽规则
+      run : |
+        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' youtube_ad.tmp>tmp.tmp
+        awk NF tmp.tmp>youtube_ad_url_rewrite.tmp
+
+        awk '
+        {
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' youtube_ad.tmp>youtube_ad_hostname.tmp
+
     - name: 生成Bilibili规则
       run : |
         awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' bili.tmp>tmp.tmp
@@ -225,10 +241,10 @@ jobs:
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat all_rule*.tmp > Surge/rule.tpl
-        cat all_url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat youtube_ad_url_rewrite.tmp all_url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat all_script*.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        cat all_hostname*.tmp > hostname.tmp
+        cat youtube_ad_hostname.tmp all_hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
