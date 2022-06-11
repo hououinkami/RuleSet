@@ -12,11 +12,6 @@
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https?:\/\/you\.163\.com\/" https://you.163.com/ 302
-"^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
-"^https:\/\/heic\.alicdn\.com\/imgextra.*\.heic" - reject
-"^https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/" - reject
-"^https?://gab\.122\.gov\.cn/eapp/m/sysquery" - reject
-"^https?://zone\.guiderank-app\.com/guiderank-web/app/ad/listLaunchADByCity\.do" - reject
 "^https?:\/\/(api|api-bk\d+)\.tv\.sohu\.com\/agg\/api\/app\/config\/bootstrap" - reject
 "^https?:\/\/(api|b)\.zhuishushenqi\.com\/advert" - reject
 "^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/" - reject
@@ -233,6 +228,7 @@
 "^https?:\/\/ios\.lantouzi\.com\/api\/startpage" - reject
 "^https?:\/\/ios\.wps\.cn\/ad-statistics-service" - reject
 "^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/(guanggao|ts_ad)\/" - reject
+"^https?:\/\/itunes\.apple\.com\/lookup\?id=575826903" - reject
 "^https?:\/\/js\.dilidd\.com\/top\.php" - reject
 "^https?:\/\/jxd524\.github\.io\/iFreeTime\/xid32uxaoecnfv2\/" - reject
 "^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\?" - reject
@@ -382,7 +378,6 @@
 "^https?:\/\/xyst\.yuanfudao\.com\/iphone\/splashesV\d" - reject
 "^https?:\/\/xyz\.cnki\.net\/resourcev7\/api\/manualpush\/SlidsList$" - reject
 "^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/" - reject
-"^https?:\/\/yxhd\.hori-gz\.com\/\/jfmsApi\/commandWord\/commandWordInfo" - reject
 "^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/" - reject
 "^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
