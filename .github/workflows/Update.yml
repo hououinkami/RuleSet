@@ -97,7 +97,14 @@ jobs:
         awk NF tmp.tmp>all_rule2.tmp
 
         awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>all_url_rewrite2.tmp
+        awk '
+        {
+          if($0!~/imgextrad/) {
+            print $0;
+          }      
+        }
+        ' tmp.tmp>tmp2.tmp
+        awk NF tmp2.tmp>all_url_rewrite2.tmp
 
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk NF tmp.tmp>all_script2.tmp
