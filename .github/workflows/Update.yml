@@ -99,7 +99,7 @@ jobs:
         awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk '
         {
-          if($0!~/imgextrad/) {
+          if($0!~/imgextra/) {
             print $0;
           }      
         }
