@@ -67,7 +67,6 @@
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https?:\/\/you\.163\.com\/" https://you.163.com/ 302
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
-"^https:\/\/heic\.alicdn\.com\/imgextra.*\.heic" - reject
 "^https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/" - reject
 "^https?://gab\.122\.gov\.cn/eapp/m/sysquery" - reject
 "^https?://zone\.guiderank-app\.com/guiderank-web/app/ad/listLaunchADByCity\.do" - reject
@@ -99,8 +98,6 @@
 "^https?:\/\/(api|promo)\.xueqiu\.com\/promotion\/(display_cache|display_ad|feed_display|search_ad)" - reject
 "^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/" - reject
 "^https?:\/\/(gw|heic)\.alicdn\.com\/\w{2}s\/.+\.jpg_(9\d{2}|\d{4})" - reject
-"^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_(9\d{2}|\d{4})" - reject
-"^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q90\.jpg_\.(heic|webp)$" - reject
 "^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)" - reject
 "^https?:\/\/(www|cn)\.pornhub\.com\/_xa\/ads.*" - reject
 "^https?:\/\/.*\.club\/floater.*" - reject
