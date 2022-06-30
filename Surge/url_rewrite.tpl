@@ -7,6 +7,7 @@
 "(^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|reply|history|v\d\/(fav|msgfeed)).+?)(&s_locale=zh-Hans_[A-Z]{2})(.+?)(&sim_code=\d+)(.+)" $1&s_locale=zh-Hans_PH$6&sim_code=51503$8 302
 "(^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+)" $1&s_locale=zh-Hans_PH$35&sim_code=51503$5 302
 "^http:\/\/(www.)?aicoin\.cn\/$" https://www.aicoin.com/ 302
+"^http:\/\/(www.)?taobao\.com\/" https://taobao.com/ 302
 "^http?:\/\/(www.)?jd\.com\/" https://www.jd.com/ 302
 "^https?:\/\/(ditu|maps).google\.cn" https://maps.google.com 302
 "^https?:\/\/(www.)?(betterzipcn|betterzip)\.(com|net)\/" https://macitbetter.com/ 302
@@ -55,7 +56,6 @@
 "^https?:\/\/(www.)?photozoomchina\.com\/" https://www.benvista.com/ 302
 "^https?:\/\/(www.)?shankejingling\.com\/" https://www.sothink.com/product/flashdecompiler/ 302
 "^https?:\/\/(www.)?suning\.com\/" https://suning.com/ 302
-"^https?:\/\/(www.)?taobao\.com\/" https://taobao.com/ 302
 "^https?:\/\/(www.)?vegaschina\.cn\/" https://www.vegascreativesoftware.com/ 302
 "^https?:\/\/(www.)?xshellcn\.com\/" https://www.netsarang.com/zh/xshell/ 302
 "^https?:\/\/(www.)?yhd\.com\/" https://yhd.com/ 302
@@ -67,9 +67,6 @@
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https?:\/\/you\.163\.com\/" https://you.163.com/ 302
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
-"^https?://amap\-aos\-info\-nogw\.amap\.com/ws/aos/alimama/" - reject
-"^https?://gab\.122\.gov\.cn/eapp/m/sysquery" - reject
-"^https?://zone\.guiderank-app\.com/guiderank-web/app/ad/listLaunchADByCity\.do" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name" - reject
@@ -151,6 +148,7 @@
 "^https?:\/\/adpai\.thepaper\.cn\/.+?&ad=" - reject
 "^https?:\/\/aes\.acfun\.cn\/s\?adzones" - reject
 "^https?:\/\/agent-count\.pconline\.com\.cn\/counter\/adAnalyse\/" - reject
+"^https?:\/\/amap\-aos\-info\-nogw\.amap\.com\/ws\/aos\/alimama\/" - reject
 "^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads" - reject
 "^https?:\/\/api-ks\.wtzw\.com\/api\/v(1|2)\/(float-adv|init-adv|reader-adv|bookshelf-adv|coopen-adv)" - reject
 "^https?:\/\/api-mifit\.huami\.com\/(discovery\/mi\/discovery\/(homepage|sleep|sport(_(summary|training))?|step_detail|training_video)_ad|v1\/app\/startpages\.json)\?" - reject
@@ -210,6 +208,7 @@
 "^https?:\/\/api\.zhihu\.com\/(notifications\/v3\/count|v3\/package|me\/guides|drama\/living-info|ad|fringe|commercial|market\/popovers|search\/(top|tab)|.*featured-comment-ad|appview\/api\/v\d\/answers\/\d+\/recommendations)" - reject
 "^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config" - reject
 "^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\?" - reject
+"^https?:\/\/api\.zhihu\.com\/explore\/entry\/tips" - reject
 "^https?:\/\/api\.zhihu\.com\/moments\/recent" - reject
 "^https?:\/\/api\.zhihu\.com\/moments\/tab_v2" - reject
 "^https?:\/\/api\.zhihu\.com\/people\/self\/new_user_card" - reject
@@ -295,6 +294,7 @@
 "^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest" - reject
 "^https?:\/\/foodie-api\.yiruikecorp\.com\/v\d\/(banner|notice)\/overview" - reject
 "^https?:\/\/g\.cdn\.pengpengla\.com\/starfantuan\/boot-screen-info\/" - reject
+"^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery" - reject
 "^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(interfaceAdMonitor|interfaceAd)\/" - reject
 "^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/status\/init" - reject
 "^https?:\/\/gateway\.shouqiev\.com(:8443)?\/fsda\/app\/bootImage\.json" - reject
@@ -496,3 +496,4 @@
 "^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/" - reject
 "^https?:\/\/zhuanlan\.zhihu\.com\/api\/articles\/\d+\/recommendation" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
+"^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do" - reject
