@@ -317,6 +317,7 @@
 "^https?:\/\/hk\.app\.joox\.com\/retrieval\/getAd" - reject
 "^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner" - reject
 "^https?:\/\/i\.ys7\.com\/api\/ads" - reject
+"^https?:\/\/iadmusicmat\.music\.126\.net\/.*?jpg$" - reject
 "^https?:\/\/iapi\.bishijie\.com\/actopen\/advertising\/" - reject
 "^https?:\/\/iapi\.bishijie\.com\/actopen\/v\d\/advertising\/" - reject
 "^https?:\/\/ib-soft\.net\/icleaner\/txt\/ad_priority\.txt$" - reject
@@ -334,7 +335,7 @@
 "^https?:\/\/img\.umetrip\.com\/fs\/advert/" - reject
 "^https?:\/\/img\d+\.10101111cdn\.com\/adpos\/" - reject
 "^https?:\/\/img\d+\.360buyimg\.com\/jddjadvertise\/" - reject
-"^https?:\/\/interface\.music\.163\.com\/eapi\/ad\/" - reject
+"^https?:\/\/interface(\d)?\.music\.163\.com\/eapi\/(ad|abtest|sp|hot|store|search\/(specialkeyword|defaultkeyword|hot))" - reject
 "^https?:\/\/intl\.iqiyi\.com\/ad_external\/" - reject
 "^https?:\/\/intl\.iqiyi\.com\/video\/advertise" - reject
 "^https?:\/\/ios\.lantouzi\.com\/api\/startpage" - reject
@@ -344,6 +345,7 @@
 "^https?:\/\/jxd524\.github\.io\/iFreeTime\/xid32uxaoecnfv2\/" - reject
 "^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\?" - reject
 "^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml" - reject
+"^https?:\/\/m\.ads\.8le8le\.com\/adShow" - reject
 "^https?:\/\/m\.caijing\.com\.cn\/startup_ad_ios\.html$" - reject
 "^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv)" - reject
 "^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd)" - reject
@@ -412,7 +414,6 @@
 "^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info" - reject
 "^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getBannerAds|getFullScreenPic|getNewsRemoteConfig|getQQNewsRemoteConfig|searchHotCatList|upLoadLoc)" - reject
 "^https?:\/\/render-oss-cdn\.amap\.com\/render\/studio-dev\/image\/" - reject
-"^https?:\/\/render\.alipay\.com\/p\/s\/h5data\/prod\/spring-festival-2019-h5data\/popup-h5data\.json" - reject
 "^https?:\/\/res-release\.wuta-cam\.com\/json\/ads_component_cache\.json" - reject
 "^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices)" - reject
 "^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget" - reject
