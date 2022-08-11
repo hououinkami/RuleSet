@@ -5,15 +5,15 @@
 > 下載地址：
 > 腳本作者：Cuttlefish
 > 微信賬號：墨魚手記
-> 更新時間：2022-05-23
+> 更新時間：2022-08-11
 > 通知頻道：https://t.me/ddgksf2021
 > 問題反饋：https://t.me/ddgksf2013_bot
 > 特别說明：本腳本僅供學習交流使用，禁止轉載售賣
  
 [rewrite_local]
 
-# ～ B站启动时开启直连模式（2022-05-23）@ddgksf2013
-^https?:\/\/api\.bilibili\.com\/x\/offline\/version url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_startup_🌐 直连.js
+# ～ B站启动时开启直连模式（2022-085-11）@ddgksf2013
+^https?:\/\/app\.bilibili\.com\/x\/resource\/domain url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/bilibili_startup_🌐 直连.js
 
 [mitm] 
 
