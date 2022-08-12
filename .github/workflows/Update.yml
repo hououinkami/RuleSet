@@ -50,7 +50,7 @@ jobs:
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule -O all_Rwrite.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/YouTubeAds.sgmodule -O youtube_ad.tmp
+        wget https://raw.githubusercontent.com/hououinkami/RuleSet/main/Surge/YouTubeAds.sgmodule -O youtube_ad.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
