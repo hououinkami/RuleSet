@@ -429,7 +429,7 @@
 "^https?:\/\/s1\.api\.tv\.itc\.cn\/v\d\/mobile\/control\/switch\.json" - reject
 "^https?:\/\/s\d\.zdmimg\.com\/www\/api\/v\d\/api\/thirdAd\.php" - reject
 "^https?:\/\/saad\.ms\.zhangyue\.net\/ad" - reject
-"^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(actionad|sdkad)\.php" - reject
+"^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/actionad\.php" - reject
 "^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(GetAD|ADLog)" - reject
 "^https?:\/\/service\.iciba\.com\/popo\/open\/screens\/v\d\?adjson" - reject
 "^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen" - reject
