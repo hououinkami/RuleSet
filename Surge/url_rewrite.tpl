@@ -1,8 +1,10 @@
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier(,.+) $1$2$3 header
-#适用于连接到电视时
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?),ctier(,.+) $1$2$3 header
-#适用于连接到电视时（逗号被url编码）
-(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?)%2Cctier(%2C.+) $1$2$3 header
+# 原去广告脚本正则修正，叠加可以观看直播
+(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier(,.+?)((&probe=1)|$) $1$4$5 header
+# 适用于连接到电视观看时
+(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?),ctier(,.+?)((\/probe\/1)|$) $1$4$5 header
+# 适用于连接到电视观看时,逗号被url编码
+(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?)%2Cctier(%2C.+?)((\/probe\/1)|$) $1$4$5 header
+# 原去广告脚本
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
 ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
