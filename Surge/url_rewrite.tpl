@@ -73,7 +73,10 @@
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
+"^https?://ads-img-al\.xhscdn\.com/hera/" - reject
 "^https?://cdn\.fivecdm\.com/cr/" - reject
+"^https?://m\d\.amap\.com/ws/message/notice/list?" - reject
+"^https?://sns\.amap\.com/ws/msgbox/pull?" - reject
 "^https?://ssp\.dzh\.com\.cn/v2api/adgroupjson" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
