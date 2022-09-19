@@ -51,6 +51,7 @@ jobs:
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
         wget https://raw.githubusercontent.com/hououinkami/RuleSet/main/Surge/YouTubeAds.sgmodule -O youtube_ad.tmp
+        wget https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule -O limbo.tmp
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
@@ -196,6 +197,27 @@ jobs:
         }
         ' youtube_ad.tmp>youtube_ad_hostname.tmp
 
+    - name: 生成Adblock4limbo规则Rewrite
+      run : |
+        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
+        awk NF tmp.tmp>limbo_url_rewrite.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Header Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
+        awk NF tmp.tmp>limbo_header_rewrite.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' limbo.tmp>tmp.tmp
+        awk NF tmp.tmp>limbo_script.tmp
+
+        awk '
+        {
+          if($0~/hostname = \%APPEND\%/) {
+            gsub("hostname = %APPEND%","");
+            print $0;
+            {exit}; 
+          }      
+        }
+        ' limbo.tmp>limbo_hostname.tmp
+
     - name: 生成Bilibili规则
       run : |
         awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' bili.tmp>tmp.tmp
@@ -248,10 +270,11 @@ jobs:
         cat realip*.tmp > Surge/always-real-ip.tpl
         cat all_force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
         cat all_rule*.tmp > Surge/rule.tpl
-        cat youtube_ad_url_rewrite.tmp all_url_rewrite*.tmp > Surge/url_rewrite.tpl
-        cat all_script*.tmp > Surge/script.tpl
+        cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp all_url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
+        cat limbo_script.tmp all_script*.tmp > Surge/script.tpl
         cat map_local*.tmp > Surge/map_local.tpl
-        cat youtube_ad_hostname.tmp all_hostname*.tmp > hostname.tmp
+        cat limbo_hostname.tmp youtube_ad_hostname.tmp all_hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 合并文件_shenji
