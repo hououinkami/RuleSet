@@ -1,0 +1,1 @@
+#!^https?:\/\/(\w{0,3}(\.){0,1}(ddrk|ddys|ddys2)(\.)\w{0,3})(?!.*?(\.webmanifest|/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* header-replace User-Agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36"
