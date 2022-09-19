@@ -1,3 +1,20 @@
+# missav 播放页弹窗
+https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
+# Avple 弹窗跳转
+^https?:\/\/assert\.avple\.tv\/file\/avple-images\/ad\.js - reject
+# www.tvn.cc 韩剧TV
+# Pornhub 视频广告
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+# javmost 播放页弹窗广告
+^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject
+# 百度网页跳转至手机网页版本
+www.baidu.com(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))) m.baidu.com 302
+# 禁知乎网页广告
+https://(www|zhuanlan)\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
+https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
+#https://(www|zhuanlan)\.zhihu\.com/api/v4/hot_recommendation - reject
+https://(www|zhuanlan)\.zhihu\.com/commercial_api/banners_v3/(mobile_banner|mobile_question) - reject
+https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 # 原去广告脚本正则修正，叠加可以观看直播
 (^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier(,.+?)((&probe=1)|$) $1$4$5 header
 # 适用于连接到电视观看时
