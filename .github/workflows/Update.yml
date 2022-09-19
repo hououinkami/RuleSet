@@ -216,7 +216,8 @@ jobs:
             {exit}; 
           }      
         }
-        ' limbo.tmp>limbo_hostname.tmp
+        ' limbo.tmp>tmp.tmp
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > limbo_hostname.tmp
 
     - name: 生成Bilibili规则
       run : |
