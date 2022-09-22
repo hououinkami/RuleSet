@@ -17,9 +17,9 @@ https://(www|zhuanlan)\.zhihu\.com/commercial_api/banners_v3/(mobile_banner|mobi
 https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 # 原去广告脚本正则修正，叠加可以观看直播
 (^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier(,.+?)((&probe=1)|$) $1$4$5 header
-# 适用于连接到电视观看时
+#适用于连接到电视观看时
 (^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?),ctier(,.+?)((\/probe\/1)|$) $1$4$5 header
-# 适用于连接到电视观看时,逗号被url编码
+#适用于连接到电视观看时,逗号被url编码
 (^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?)%2Cctier(%2C.+?)((\/probe\/1)|$) $1$4$5 header
 # 原去广告脚本
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
