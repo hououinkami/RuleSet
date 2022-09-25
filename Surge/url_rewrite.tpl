@@ -89,6 +89,7 @@ https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
+"(?i)\btc\.qq\.com\/[\w\/\.-]+[a-z]\d+\.mp4\?" - reject
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
 "^https?://ads-img-al\.xhscdn\.com/hera/" - reject
 "^https?://cdn\.fivecdm\.com/cr/" - reject
