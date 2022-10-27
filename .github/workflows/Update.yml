@@ -103,7 +103,7 @@ jobs:
         {
           if($0~/hostname = \%APPEND\%/) {
             gsub("hostname = %APPEND%","");
-            print $0 ", ";
+            print $0 ",";
             {exit}; 
           }      
         }
@@ -162,7 +162,7 @@ jobs:
         {
           if($0~/hostname = \%APPEND\%/) {
             gsub("hostname = %APPEND%","");
-            print $0 ", ";
+            print $0 ",";
             {exit}; 
           }      
         }
@@ -183,7 +183,7 @@ jobs:
         {
           if($0~/hostname = \%APPEND\%/) {
             gsub("hostname = %APPEND%","");
-            print $0 ", ";
+            print $0 ",";
             {exit}; 
           }      
         }
@@ -205,7 +205,7 @@ jobs:
         {
           if($0~/hostname = \%APPEND\%/) {
             gsub("hostname = %APPEND%","");
-            print $0 ", ";
+            print $0 ",";
             {exit}; 
           }      
         }
