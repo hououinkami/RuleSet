@@ -15,18 +15,8 @@ https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
 #https://(www|zhuanlan)\.zhihu\.com/api/v4/hot_recommendation - reject
 https://(www|zhuanlan)\.zhihu\.com/commercial_api/banners_v3/(mobile_banner|mobile_question) - reject
 https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
-# 原去广告脚本正则修正，叠加可以观看直播
-(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier(,.+?)((&probe=1)|$) $1$4$5 header
-#适用于连接到电视观看时
-(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?),ctier(,.+?)((\/probe\/1)|$) $1$4$5 header
-#适用于连接到电视观看时,逗号被url编码
-(^https?:\/\/(?!((r\d-)|manifest))[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)\/ctier\/L(\/.+?)%2Cctier(%2C.+?)((\/probe\/1)|$) $1$4$5 header
-# 原去广告脚本
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
-^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
-^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject
-^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject
+# missav 直播跳出广告
+https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "(^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|reply|history|v\d\/(fav|msgfeed)).+?)(&s_locale=zh-Hans_[A-Z]{2})(.+?)(&sim_code=\d+)(.+)" $1&s_locale=zh-Hans_PH$6&sim_code=51503$8 302
 "(^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+)" $1&s_locale=zh-Hans_PH$35&sim_code=51503$5 302
 "^http:\/\/(www.)?aicoin\.cn\/$" https://www.aicoin.com/ 302
@@ -93,9 +83,13 @@ https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
 "^https?://ads-img-al\.xhscdn\.com/hera/" - reject
 "^https?://cdn\.fivecdm\.com/cr/" - reject
+"^https?://cn-acs\.m\.cainiao\.com/gw/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn/" - reject
+"^https?://img2\.autoimg\.cn/admdfs/" - reject
 "^https?://m\d\.amap\.com/ws/message/notice/list?" - reject
+"^https?://oss\.umetrip\.com/fs/advert/polite/" - reject
 "^https?://sns\.amap\.com/ws/msgbox/pull?" - reject
 "^https?://ssp\.dzh\.com\.cn/v2api/adgroupjson" - reject
+"^https?://venus\.yhd\.com/memhome/launchConfig" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name" - reject
