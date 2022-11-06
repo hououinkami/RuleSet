@@ -115,7 +115,7 @@ jobs:
         {
           if($0~/force-http-engine-hosts = %APPEND%/) {
             gsub("force-http-engine-hosts = %APPEND% ","");
-            print $0;
+            print $0 ",";
             {exit};
           }      
         }
