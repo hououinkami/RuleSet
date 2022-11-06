@@ -158,6 +158,9 @@ jobs:
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' youtube_ad.tmp>tmp.tmp
         awk NF tmp.tmp>youtube_ad_script.tmp
 
+        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' youtube_ad.tmp>tmp.tmp
+        awk NF tmp.tmp>youtube_ad_map_local.tmp
+
         awk '
         {
           if($0~/hostname = \%APPEND\%/) {
@@ -245,7 +248,7 @@ jobs:
         cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
         cat youtube_ad_script.tmp limbo_script.tmp script*.tmp > Surge/script.tpl
-        cat map_local*.tmp > Surge/map_local.tpl
+        cat youtube_ad_map_local.tmp map_local*.tmp > Surge/map_local.tpl
         cat limbo_hostname.tmp youtube_ad_hostname.tmp hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
