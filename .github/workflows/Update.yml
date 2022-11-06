@@ -243,7 +243,8 @@ jobs:
       if: env.VER == 'all' && !cancelled()
       run : |
         cat realip*.tmp > Surge/always-real-ip.tpl
-        cat force-http-engine-hosts*.tmp > Surge/force-http-engine-hosts.tpl
+        cat force-http-engine-hosts*.tmp > force-http-engine-hosts.tmp
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > Surge/force-http-engine-hosts.tpl
         cat rule*.tmp > Surge/rule.tpl
         cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
