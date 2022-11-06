@@ -46,7 +46,7 @@ jobs:
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne.sgmodule -O all_Rwrite.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule -O all_Rwrite.tmp
         wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
         wget https://raw.githubusercontent.com/Maasea/sgmodule/master/YoutubeAds.sgmodule -O youtube_ad.tmp
@@ -80,7 +80,7 @@ jobs:
             {exit}; 
           }      
         }
-        ' General.tmp>realip1.tmp
+        ' General.tmp>realip2.tmp
     
     - name: 生成神机规则Advertising
       run : |
@@ -119,10 +119,10 @@ jobs:
             {exit};
           }      
         }
-        ' all_Rwrite.tmp>force-http-engine-hosts2.tmp
+        ' all_Rwrite.tmp>force-http-engine-hosts1.tmp
 
         awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>rule2.tmp
+        awk NF tmp.tmp>rule1.tmp
 
         awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk '
@@ -132,10 +132,13 @@ jobs:
           }      
         }
         ' tmp.tmp>tmp2.tmp
-        awk NF tmp2.tmp>url_rewrite2.tmp
+        awk NF tmp2.tmp>url_rewrite1.tmp
+
+        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' all_Rwrite.tmp>tmp.tmp
+        awk NF tmp.tmp>map_local1.tmp
 
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>script2.tmp
+        awk NF tmp.tmp>script1.tmp
 
         awk '
         {
@@ -146,9 +149,6 @@ jobs:
           }      
         }
         ' all_Rwrite.tmp>hostname2.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>map_local1.tmp
 
     - name: 生成YouTube广告屏蔽规则
       run : |
