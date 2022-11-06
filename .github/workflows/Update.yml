@@ -86,7 +86,7 @@ jobs:
       run : |
         awk '
         {
-          if($0~/force-http-engine-hosts/) {
+          if($0~/force-http-engine-hosts = %APPEND%/) {
             gsub("force-http-engine-hosts = %APPEND% ","");
             print $0;
             {exit};
@@ -119,7 +119,7 @@ jobs:
             {exit};
           }      
         }
-        ' all_Rwrite.tmp>force-http-engine-hosts1.tmp
+        ' all_Rwrite.tmp>force-http-engine-hosts1.tmp 
 
         awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk NF tmp.tmp>rule1.tmp
