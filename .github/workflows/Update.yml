@@ -113,7 +113,7 @@ jobs:
       run : |
         awk '
         {
-          if($0~/force-http-engine-hosts/) {
+          if($0~/force-http-engine-hosts = %APPEND%/) {
             gsub("force-http-engine-hosts = %APPEND% ","");
             print $0;
             {exit};
