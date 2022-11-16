@@ -261,11 +261,13 @@ jobs:
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 删除临时文件
+      if: !cancelled()
       run : |
         rm *.tmp
         ls
     
     - name: 判断是否有变更
+      if: !cancelled()
       id: status
       run: |
         STR1="nothing to commit, working tree clean"
@@ -281,6 +283,7 @@ jobs:
         fi
     
     - name: 合并到仓库
+      if: !cancelled()
       run : |
         if [[ "${{steps.status.outputs.status}}" == "change" ]]
         then
@@ -290,6 +293,7 @@ jobs:
         fi
 
     - name: 移除workflow运行
+      if: !cancelled()
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
