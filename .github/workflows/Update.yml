@@ -232,7 +232,6 @@ jobs:
       run : |
         wget https://codeberg.org/ddgksf2013/Cuttlefish/raw/branch/master/Script/bilibili_startup_direct.js -O bilistart.tmp
         if [ $? -ne 0 ]; then
-          echo "[ERROR] 正常にダウンロードできませんでした"
           exit 1
         fi
         awk '
