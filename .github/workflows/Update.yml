@@ -174,7 +174,14 @@ jobs:
     - name: 生成Adblock4limbo规则Rewrite
       run : |
         awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
-        awk NF tmp.tmp>limbo_url_rewrite.tmp
+        awk '
+        {
+          if($0!~/m.baidu.com 302/) {
+            print $0; 
+          }      
+        }
+        ' tmp.tmp>tmp2.tmp
+        awk NF tmp2.tmp>limbo_url_rewrite.tmp
 
         awk '/^(\[)/{f=0} f; /\[Header Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
         awk NF tmp.tmp>limbo_header_rewrite.tmp
@@ -231,10 +238,6 @@ jobs:
     - name: Bilibili启动时切换为直连
       run : |
         wget https://codeberg.org/ddgksf2013/Cuttlefish/raw/branch/master/Script/bilibili_startup_direct.js -O bilistart.tmp
-        if [ $? -ne 0 ]; then
-          echo "[ERROR] 正常にダウンロードできませんでした"
-          exit 1
-        fi
         awk '
         {
           gsub("DomesticMedia","📺 Bilibili");
