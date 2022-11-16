@@ -8,7 +8,6 @@ https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
 # javmost 播放页弹窗广告
 ^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject
 # 百度网页跳转至手机网页版本
-www.baidu.com(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))) m.baidu.com 302
 # 禁知乎网页广告
 https://(www|zhuanlan)\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
 https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
