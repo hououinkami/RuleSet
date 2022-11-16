@@ -18,6 +18,7 @@ env:
   TELEGRAM_NOTIFICATION: false
   TELEGRAM_NOTIFICATION_CONTENT: <b>ルール更新しました！</b>
   VER: all
+  SKIP_ERROR: true
 
 
 jobs:
@@ -261,13 +262,13 @@ jobs:
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 删除临时文件
-      if: !cancelled()
+      if: env.SKIP_ERROR == 'true' && !cancelled()
       run : |
         rm *.tmp
         ls
     
     - name: 判断是否有变更
-      if: !cancelled()
+      if: env.SKIP_ERROR == 'true' && !cancelled()
       id: status
       run: |
         STR1="nothing to commit, working tree clean"
@@ -283,7 +284,7 @@ jobs:
         fi
     
     - name: 合并到仓库
-      if: !cancelled()
+      if: env.SKIP_ERROR == 'true' && !cancelled()
       run : |
         if [[ "${{steps.status.outputs.status}}" == "change" ]]
         then
@@ -293,7 +294,7 @@ jobs:
         fi
 
     - name: 移除workflow运行
-      if: !cancelled()
+      if: env.SKIP_ERROR == 'true' && !cancelled()
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
