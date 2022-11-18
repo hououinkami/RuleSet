@@ -145,6 +145,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api-release\.wuta-cam\.com\/ad_tree" - reject
 "^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash" - reject
 "^https?:\/\/api\.21jingji\.com\/ad\/" - reject
+"^https?:\/\/api\.[\w-]+\.abema-tv\.com\/v\d\/ip\/check" - reject
 "^https?:\/\/api\.applovefrom\.com\/api\/v\d\/splash\/" - reject
 "^https?:\/\/api\.bjxkhc\.com\/index\.php\/app\/ios\/ads\/" - reject
 "^https?:\/\/api\.caijingmobile\.com\/(ad|advert)\/" - reject
