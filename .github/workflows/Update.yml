@@ -237,7 +237,7 @@ jobs:
       
     - name: Bilibili启动时切换为直连
       run : |
-        wget  -O bilistart.tmp
+        wget https://ocd0522.tk/ddgksf2013/Cuttlefish/raw/branch/master/Script/bilibili_startup_direct.js -O bilistart.tmp
         awk '
         {
           gsub("DomesticMedia","📺 Bilibili");
