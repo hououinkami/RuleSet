@@ -83,6 +83,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?://ads-img-al\.xhscdn\.com/hera/" - reject
 "^https?://cdn\.fivecdm\.com/cr/" - reject
 "^https?://img2\.autoimg\.cn/admdfs/" - reject
+"^https?://mangaapi\.manhuaren\.com/v\d/ad/" - reject
 "^https?://oss\.umetrip\.com/fs/advert/polite/" - reject
 "^https?://ssp\.dzh\.com\.cn/v2api/adgroupjson" - reject
 "^https?://venus\.yhd\.com/memhome/launchConfig" - reject
