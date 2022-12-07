@@ -78,15 +78,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
-"(?i)\btc\.qq\.com\/[\w\/\.-]+[a-z]\d+\.mp4\?" - reject
 "^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
-"^https?://ads-img-al\.xhscdn\.com/hera/" - reject
-"^https?://cdn\.fivecdm\.com/cr/" - reject
-"^https?://img2\.autoimg\.cn/admdfs/" - reject
-"^https?://mangaapi\.manhuaren\.com/v\d/ad/" - reject
-"^https?://oss\.umetrip\.com/fs/advert/polite/" - reject
-"^https?://ssp\.dzh\.com\.cn/v2api/adgroupjson" - reject
-"^https?://venus\.yhd\.com/memhome/launchConfig" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name" - reject
@@ -139,6 +131,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/" - reject
 "^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/show\.do" - reject
 "^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show" - reject
+"^https?:\/\/ads-img-al\.xhscdn\.com\/hera\/" - reject
 "^https?:\/\/agent-count\.pconline\.com\.cn\/counter\/adAnalyse\/" - reject
 "^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads" - reject
 "^https?:\/\/api-ks\.wtzw\.com\/api\/v(1|2)\/(float-adv|init-adv|reader-adv|bookshelf-adv|coopen-adv)" - reject
@@ -223,6 +216,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.dianshihome\.com\/static\/ad\/" - reject
 "^https?:\/\/cdn\.moji\.com\/(adoss|adlink)\/" - reject
+"^https?:\/\/cdn\.moji\.com\/advert\/" - reject
 "^https?:\/\/channel\.beitaichufang\.com\/channel\/api\/v1\/promote\/ios\/start\/page" - reject
 "^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds" - reject
 "^https?:\/\/clientaccess\.10086\.cn\/biz-orange\/DN\/init\/startInit" - reject
@@ -262,6 +256,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/" - reject
 "^https?:\/\/image\.suning\.cn\/uimg\/ma\/ad\/" - reject
 "^https?:\/\/imeclient\.openspeech\.cn\/adservice\/" - reject
+"^https?:\/\/img2\.autoimg\.cn\/admdfs\/" - reject
 "^https?:\/\/img\.meituan\.net\/(adunion|display|dpmobile|midas)\/\w+\.(gif|jpg|jpg\.webp)$" - reject
 "^https?:\/\/img\.umetrip\.com\/fs\/advert/" - reject
 "^https?:\/\/img\d+\.10101111cdn\.com\/adpos\/" - reject
@@ -284,6 +279,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/" - reject
 "^https?:\/\/mage\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen" - reject
 "^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/" - reject
+"^https?:\/\/mangaapi\.manhuaren\.com\/v\d\/ad\/" - reject
 "^https?:\/\/mangaapi\.manhuaren\.com\/v\d\/public\/getStartPageAds" - reject
 "^https?:\/\/mapi\.dangdang\.com\/index\.php\?action=init" - reject
 "^https?:\/\/mapi\.mafengwo\.cn\/(travelguide/)?ad\/" - reject
@@ -308,6 +304,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/nnapp\.cloudbae\.cn(:\d+)?\/mc\/api\/advert" - reject
 "^https?:\/\/open\.qyer\.com\/qyer\/config\/get" - reject
 "^https?:\/\/open\.qyer\.com\/qyer\/startpage\/" - reject
+"^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite\/" - reject
 "^https?:\/\/overseas\.weico\.cc\/portal\.php\?a=get_coopen_ads" - reject
 "^https?:\/\/p\.du\.163\.com\/ad\/" - reject
 "^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg" - reject
@@ -342,6 +339,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/snailsleep\.net\/snail\/v\d\/screen\/qn\/get\?" - reject
 "^https?:\/\/sp\.kaola\.com\/api\/openad" - reject
 "^https?:\/\/ssl\.kohsocialapp\.qq\.com:\d+\/game\/buttons" - reject
+"^https?:\/\/ssp\.dzh\.com\.cn\/v2api\/adgroupjson" - reject
 "^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json" - reject
 "^https?:\/\/syh\.zybang\.com\/com\/adx\/" - reject
 "^https?:\/\/thor\.weidian\.com\/ares\/home\.splash\/" - reject
@@ -352,6 +350,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/tracker-download\.oss-cn-beijing\.aliyuncs\.com\/SIMPlus\/(ad_|AD\/)" - reject
 "^https?:\/\/u\d\.iqiyipic\.com\/image\/[\w\/]+\/oad_" - reject
 "^https?:\/\/v\d-api\.miaopai\.com\/miaopai\/advertisement\/" - reject
+"^https?:\/\/venus\.yhd\.com\/memhome\/launchConfig" - reject
 "^https?:\/\/video\.dispatch\.tc\.qq\.com\/\w+\.p20\d\.1\.mp4" - reject
 "^https?:\/\/vv\.video\.qq\.com\/getvmind\?" - reject
 "^https?:\/\/wap\.ngchina\.cn\/news\/adverts\/" - reject
