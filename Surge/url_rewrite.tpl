@@ -78,7 +78,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
-"^https:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name" - reject
@@ -238,6 +237,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery" - reject
 "^https?:\/\/gateway\.shouqiev\.com(:8443)?\/fsda\/app\/bootImage\.json" - reject
 "^https?:\/\/gfp\.veta\.naver\.com\/adcall\?" - reject
+"^https?:\/\/god\.gameyw\.netease\.com\/v1\/ad\/.*" - reject
 "^https?:\/\/gw-passenger\.01zhuanche\.com\/gw-passenger\/zhuanche-passengerController\/notk\/passenger\/recommendADs" - reject
 "^https?:\/\/gw\.csdn\.net\/cms-app\/v\d+\/home_page\/open_advertisement" - reject
 "^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/banner" - reject
