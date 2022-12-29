@@ -255,7 +255,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.(jpg|mp4)" - reject
 "^https?:\/\/e\.dangdang\.com\/media\/api.+?\?action=getDeviceStartPage" - reject
 "^https?:\/\/elemecdn\.com\/.+?\/sitemap" - reject
-"^https?:\/\/emdcadvertise\.eastmoney\.com\/infoService" - reject
 "^https?:\/\/fb\.fbstatic\.cn\/api\/ape-images\/.*.jpg?" - reject
 "^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4)" - reject
 "^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest" - reject
