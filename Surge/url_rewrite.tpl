@@ -80,6 +80,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource" - reject
 "^https:\/\/api\.caiyunapp\.com\/v1\/activity" - reject
+"^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
 "^https:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
@@ -247,7 +248,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -262,7 +262,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/clientaccess\.10086\.cn\/biz-orange\/DN\/init\/startInit" - reject
 "^https?:\/\/cloud\.189\.cn\/include\/splash\/" - reject
 "^https?:\/\/cmsapi\.wifi8\.com\/v\d\/(emptyAd|adNew)\/" - reject
-"^https?:\/\/consumer\.fcbox\.com\/v\d\/ad\/" - reject
 "^https?:\/\/creditcardapp\.bankcomm\.cn\/mappweb_interface\/common\/(qryPopAds|qryLaunchAds)\.do" - reject
 "^https?:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds" - reject
 "^https?:\/\/daoyu\.sdo\.com\/api\/userCommon\/getAppStartAd" - reject
@@ -334,7 +333,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/(getAdvList|prefetchAdvList)\.ah" - reject
 "^https?:\/\/lchttpapi\.xczim\.com\/1\.1\/functions\/getLaunchImageForIOS" - reject
 "^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml" - reject
-"^https?:\/\/m5\.amap\.com\/ws\/valueadded\/" - reject
 "^https?:\/\/m\.ads\.8le8le\.com\/adShow" - reject
 "^https?:\/\/m\.caijing\.com\.cn\/startup_ad_ios\.html$" - reject
 "^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd)" - reject
@@ -419,7 +417,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/s1\.api\.tv\.itc\.cn\/v\d\/mobile\/control\/switch\.json" - reject
 "^https?:\/\/s\d\.zdmimg\.com\/www\/api\/v\d\/api\/thirdAd\.php" - reject
 "^https?:\/\/saad\.ms\.zhangyue\.net\/ad" - reject
-"^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/version" - reject
+"^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/.*?\/v\d\/(version|top_notice\?|advert\?position=[^2]+)" - reject
 "^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/actionad\.php" - reject
 "^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(GetAD|ADLog)" - reject
 "^https?:\/\/service\.busi\.inke\.cn\/api\/flash\/screen" - reject
@@ -483,9 +481,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/yxhd\.hori-gz\.com\/\/jfmsApi\/commandWord\/commandWordInfo" - reject
 "^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/" - reject
 "^https?:\/\/zconfig\.alibabausercontent\.com\/zconfig" - reject
-"^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/advert\?position=[^2]+" - reject
-"^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/top_notice\?" - reject
-"^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/version" - reject
+"^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/(version|top_notice\?|advert\?position=[^2]+)" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
 "^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do" - reject
 "https?:\/\/access\.mypikpak\.com\/access_controller\/v1\/area_accessible" - reject
