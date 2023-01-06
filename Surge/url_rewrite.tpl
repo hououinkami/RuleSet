@@ -80,6 +80,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource" - reject
 "^https:\/\/api\.caiyunapp\.com\/v1\/activity" - reject
+"^https:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo" - reject
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
 "^https:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
@@ -269,6 +270,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/dict-mobile\.iciba\.com\/interface\/index\.php\?[\w=&]*(c=ad|collectFeedsAdShowCount|KSFeedsAdCardViewController)" - reject
 "^https?:\/\/dili\.bdatu\.com\/jiekou\/ad\/" - reject
 "^https?:\/\/dispatcher\.camera360\.com\/api\/v1\/list$" - reject
+"^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list" - reject
 "^https?:\/\/dl\.app\.gtja\.com\/dzswem\/kvController\/.+?\.jpg$" - reject
 "^https?:\/\/dsa-mfp\.fengshows\.cn\/mfp\/mfpMultipleDelivery\.do\?.+?adunitid" - reject
 "^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/" - reject
@@ -320,8 +322,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/interface(\d)?\.music\.163\.com\/eapi\/(ad|abtest|sp|hot|store|search\/(specialkeyword|defaultkeyword|hot))" - reject
 "^https?:\/\/intl\.iqiyi\.com\/ad_external\/" - reject
 "^https?:\/\/intl\.iqiyi\.com\/video\/advertise" - reject
-"^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb" - reject
-"^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/YourSystemName" - reject
+"^https?:\/\/iobs\.pingan\.com\.cn\/download\/(bweb-per-sf-prd\/bweb|icore-aops-base-dmz-prd\/YourSystemName)" - reject
 "^https?:\/\/ios\.wps\.cn\/ad-statistics-service" - reject
 "^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/(guanggao|ts_ad)\/" - reject
 "^https?:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$" - reject
@@ -405,7 +406,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/pzoap\.moedot\.net\/xgapp\.php\/v2\/top_notice" - reject
 "^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info" - reject
 "^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getBannerAds|getFullScreenPic|getNewsRemoteConfig|getQQNewsRemoteConfig|searchHotCatList|upLoadLoc)" - reject
-"^https?:\/\/r\.inews\.qq\.com\/getSplash" - reject
+"^https?:\/\/r\.inews\.qq\.com\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc)" - reject
 "^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport" - reject
 "^https?:\/\/res-release\.wuta-cam\.com\/json\/ads_component_cache\.json" - reject
 "^https?:\/\/res\.kfc\.com\.cn\/advertisement\/" - reject
