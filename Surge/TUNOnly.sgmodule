@@ -1,6 +1,10 @@
 #!name=TUN Only
-#!desc=启用兼容模式，用于某些无法通过Surge联网的App
+#!desc=启用兼容模式，用于某些无法通过Surge联网的App，并强制80端口使用HTTP代理
 #!system=ios
 
 [General]
 compatibility-mode = 3
+force-http-engine-hosts = %APPEND% -<ip-address>, *
+
+[MITM]
+tcp-connection = true
