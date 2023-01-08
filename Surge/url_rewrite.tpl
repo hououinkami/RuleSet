@@ -212,6 +212,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/apimobile\.meituan\.com\/appupdate\/mach\/checkUpdate?" - reject
 "^https?:\/\/app-api\.jinse\.com\/v\d\/ad\/" - reject
 "^https?:\/\/app-api\.niu\.com\/v\d\/advertisement\/" - reject
+"^https?:\/\/app-gw\.csdn\.net\/silkroad-api\/api\/v\d\/assemble\/list\/pub\/channel\/app_open_screen_ad" - reject
 "^https?:\/\/app2\.autoimg\.cn\/appdfs\/" - reject
 "^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv)\/" - reject
 "^https?:\/\/app\.58\.com\/api\/home\/invite\/popupAdv" - reject
