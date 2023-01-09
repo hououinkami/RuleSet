@@ -161,7 +161,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api\.chelaile\.net\.cn\/goocity\/advert\/" - reject
 "^https?:\/\/api\.cloud\.189\.cn\/guns\/getOpenscreenBanners" - reject
 "^https?:\/\/api\.club\.lenovo\.cn\/common\/open_ad" - reject
-"^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch" - reject
 "^https?:\/\/api\.dangdang\.com\/mapi\d\/mobile\/init" - reject
 "^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.*" - reject
 "^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash" - reject
@@ -303,7 +302,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul" - reject
 "^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul" - reject
 "^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul" - reject
-"^https?:\/\/hcz-member\.pingan\.com\.cn\/micro-api\/homepage\/do\/app\/popbox\/getTopPopBox" - reject
 "^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner" - reject
 "^https?:\/\/i\.ys7\.com\/api\/ads" - reject
 "^https?:\/\/iadmusicmat\.music\.126\.net\/.*?jpg$" - reject
@@ -324,7 +322,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/interface(\d)?\.music\.163\.com\/eapi\/(ad|abtest|sp|hot|store|search\/(specialkeyword|defaultkeyword|hot))" - reject
 "^https?:\/\/intl\.iqiyi\.com\/ad_external\/" - reject
 "^https?:\/\/intl\.iqiyi\.com\/video\/advertise" - reject
-"^https?:\/\/iobs\.pingan\.com\.cn\/download\/(bweb-per-sf-prd\/bweb|icore-aops-base-dmz-prd\/YourSystemName)" - reject
 "^https?:\/\/ios\.wps\.cn\/ad-statistics-service" - reject
 "^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/(guanggao|ts_ad)\/" - reject
 "^https?:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$" - reject
