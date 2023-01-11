@@ -249,6 +249,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
+"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -358,6 +359,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/media\.qyer\.com\/ad\/" - reject
 "^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo$" - reject
 "^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement" - reject
+"^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend" - reject
 "^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert" - reject
 "^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/" - reject
 "^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/" - reject
