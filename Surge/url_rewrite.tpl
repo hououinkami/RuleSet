@@ -363,7 +363,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert" - reject
 "^https?:\/\/mob\.mddcloud\.com\.cn\/api\/(ad|advert)\/" - reject
 "^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/" - reject
-"^https?:\/\/mobilead\.kuwo\.cn\/EcomResourceServer\/adBubble\/.+" - reject
 "^https?:\/\/mobileapi-v6\.elong\.com\/adgateway\/" - reject
 "^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport)" - reject
 "^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info" - reject
@@ -413,7 +412,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/res\.pizzahut\.com\.cn\/CRM\/phad\/apphome\/apphome" - reject
 "^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget" - reject
 "^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\/" - reject
-"^https?:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/adinfo" - reject
 "^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo" - reject
 "^https?:\/\/s1\.api\.tv\.itc\.cn\/v\d\/mobile\/control\/switch\.json" - reject
 "^https?:\/\/s\d\.zdmimg\.com\/www\/api\/v\d\/api\/thirdAd\.php" - reject
