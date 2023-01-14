@@ -249,7 +249,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -277,7 +276,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/" - reject
 "^https?:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.(jpg|mp4)" - reject
 "^https?:\/\/e\.dangdang\.com\/media\/api.+?\?action=getDeviceStartPage" - reject
-"^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status" - reject
 "^https?:\/\/elemecdn\.com\/.+?\/sitemap" - reject
 "^https?:\/\/emdcadvertise\.eastmoney\.com\/infoService" - reject
 "^https?:\/\/fb\.fbstatic\.cn\/api\/ape-images\/.*.jpg?" - reject
@@ -389,7 +387,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/p\.du\.163\.com\/ad\/" - reject
 "^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg" - reject
 "^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp" - reject
-"^https?:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches" - reject
 "^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry" - reject
 "^https?:\/\/pan\.baidu\.com\/act\/v\d\/bchannel\/list" - reject
 "^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad" - reject
@@ -406,7 +403,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/qt\.qq\.com\/lua\/mengyou\/get_splash_screen_info" - reject
 "^https?:\/\/r\.inews\.qq\.com\/(adsBlacklist|getBannerAds|getFullScreenPic|getNewsRemoteConfig|getQQNewsRemoteConfig|searchHotCatList|upLoadLoc)" - reject
 "^https?:\/\/r\.inews\.qq\.com\/(getBannerAds|getNewsRemoteConfig|getSplash|searchHotCatList|upLoadLoc)" - reject
-"^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport" - reject
 "^https?:\/\/res-release\.wuta-cam\.com\/json\/ads_component_cache\.json" - reject
 "^https?:\/\/res\.kfc\.com\.cn\/advertisement\/" - reject
 "^https?:\/\/res\.pizzahut\.com\.cn\/CRM\/phad\/apphome\/apphome" - reject
