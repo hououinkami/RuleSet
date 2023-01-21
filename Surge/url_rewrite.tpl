@@ -120,6 +120,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/.+?\/img\/ad\.union\.api\/" - reject
 "^https?:\/\/.+?\/music\/common\/upload\/t_splash_info" - reject
 "^https?:\/\/103\.91\.210\.141\:2515\/xgapp\.php\/v2\/top_notice" - reject
+"^https?:\/\/2023\.01\.20/v2\.0\/246" - reject
 "^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement" - reject
 "^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis" - reject
 "^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/" - reject
