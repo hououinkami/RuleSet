@@ -223,6 +223,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/app\.badmintoncn\.com\/mag\/operative\/v\d\/ad\/" - reject
 "^https?:\/\/app\.ddpai\.com\/d\/api\/v\d\/config\/get\/bootscreen" - reject
 "^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement\/" - reject
+"^https?:\/\/app\.homeinns\.com\/api\/landing" - reject
 "^https?:\/\/app\.mixcapp\.com\/mixc\/api\/v\d\/ad" - reject
 "^https?:\/\/app\.peopleapp\.com\/Api\/\d+/HomeApi\/getAdvertImage" - reject
 "^https?:\/\/app\.poizon\.com\/api\/v\d\/app\/advertisement\/" - reject
