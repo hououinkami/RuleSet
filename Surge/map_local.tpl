@@ -105,6 +105,7 @@
 "^https?:\/\/notch\.qdaily\.com\/api\/v\d\/boot_ad" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/oimage([a-z])([0-9])\.ydstatic\.com\/.+?adpublish" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
+"^https?:\/\/p0\.pipi\.cn\/adAdmin\/\w+.jpg\?" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.gif"
 "^https?:\/\/p\.kuaidi100\.com\/mobile\/(mainapi|mobileapi)\.do" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/p\d\.meituan\.net\/wmbanner\/[A-Za-z0-9]+\.jpg" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/pic1\.chelaile\.net\.cn\/adv\/" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
