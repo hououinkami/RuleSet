@@ -78,9 +78,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
-"^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource" - reject
-"^https:\/\/api\.caiyunapp\.com\/v1\/activity" - reject
-"^https:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo" - reject
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
 "^https:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
@@ -131,11 +128,13 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/a\.qiumibao\.com\/activities\/config\.php" - reject
 "^https?:\/\/a\.qiumibao\.com\/ios\/config\/\?version_code=" - reject
 "^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/" - reject
+"^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource" - reject
 "^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/" - reject
 "^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome\/" - reject
 "^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/" - reject
 "^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/show\.do" - reject
 "^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show" - reject
+"^https?:\/\/adapi\.izuiyou\.com\/" - reject
 "^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend" - reject
 "^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/" - reject
 "^https?:\/\/ads-img-al\.xhscdn\.com\/hera\/" - reject
@@ -156,6 +155,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api\.applovefrom\.com\/api\/v\d\/splash\/" - reject
 "^https?:\/\/api\.bjxkhc\.com\/index\.php\/app\/ios\/ads\/" - reject
 "^https?:\/\/api\.caijingmobile\.com\/(ad|advert)\/" - reject
+"^https?:\/\/api\.caiyunapp\.com\/v1\/activity" - reject
 "^https?:\/\/api\.catch\.gift\/api\/v\d\/pagead\/" - reject
 "^https?:\/\/api\.cdmcaac\.com\/ad\/" - reject
 "^https?:\/\/api\.chelaile\.net\.cn\/adpub\/" - reject
@@ -167,6 +167,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash" - reject
 "^https?:\/\/api\.feng\.com\/v\d\/advertisement\/.*Claunch" - reject
 "^https?:\/\/api\.futunn\.com\/v\d\/ad\/" - reject
+"^https?:\/\/api\.gameplus\.qq\.com\/community\.OnloadSrv\/GetPreloadScreenInfo" - reject
 "^https?:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/ad\/" - reject
 "^https?:\/\/api\.gotokeep\.com\/ads" - reject
 "^https?:\/\/api\.gotokeep\.com\/op-engine-webapp\/v\d\/ad/" - reject
@@ -204,7 +205,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api\.yikaobang\.com\.cn\/index\.php\/Client\/main\/startPage" - reject
 "^https?:\/\/api\.yizhibo\.com\/common\/api\/(api_)?pz$" - reject
 "^https?:\/\/api\.yonghuivip\.com\/web\/shensuan\/ad\/getAd" - reject
-"^https?:\/\/api\.zhihu\.com\/explore\/entry\/tips" - reject
 "^https?:\/\/api\.zhuishushenqi\.com\/notification\/shelfMessage" - reject
 "^https?:\/\/api\.zhuishushenqi\.com\/splashes\/ios" - reject
 "^https?:\/\/api\.zhuishushenqi\.com\/user\/bookshelf-updated" - reject
@@ -251,6 +251,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
+"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -470,7 +471,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo" - reject
 "^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/" - reject
 "^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config" - reject
-"^https?:\/\/www\.zhihu\.com\/appview\/(p|v2\/answer|zvideo)\/.*entry=(preload-topstory|preload-search|preload-subscription)" - reject
 "^https?:\/\/www\.zybang\.com\/adx\/" - reject
 "^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/" - reject
 "^https?:\/\/yanxuan.nosdn.127.net\/(static-union\/)?.*\.gif" - reject
