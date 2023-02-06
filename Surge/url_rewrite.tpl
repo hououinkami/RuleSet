@@ -79,7 +79,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
-"^https:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
@@ -190,7 +189,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api\.qiuduoduo\.cn\/guideimage" - reject
 "^https?:\/\/api\.rr\.tv\/ad\/" - reject
 "^https?:\/\/api\.taou\.com\/sdk\/global\/splash_ad" - reject
-"^https?:\/\/api\.tipsoon\.com\/api\/v\d\/top\/ad" - reject
 "^https?:\/\/api\.touker\.com\/v2\/IAdvertisementAPI\.queryStartAdvertisement" - reject
 "^https?:\/\/api\.videozhishi\.com\/api\/getAdvertising" - reject
 "^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement" - reject
@@ -251,7 +249,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -490,8 +487,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex)" - reject
 "https?:\/\/homefront\.qunar\.com\/front\/splash\/ad" - reject
 "https?:\/\/ios\.sspai\.com\/api\/v3\/recommend\/page\/get\?ad.*ios_home_modal" - reject
-"https?:\/\/jdread-api\.jd\.com\/jdread\/api\/channel\/module\/opens" - reject
-"https?:\/\/jdread-api\.jd\.com\/jdread\/api\/popup" - reject
 "https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do" - reject
 "https?:\/\/mangaapi\.manhuaren\.com\/v2\/public\/getShelfActivity" - reject
 "https?:\/\/new-app-api\.ylyk\.com\/v1\/user\/myinfo\/adviser" - reject
