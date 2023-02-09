@@ -286,6 +286,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4" - reject
 "^https?:\/\/fuss10\.elemecdn\.com\/.+?\/w\/640\/h\/\d{3,4}" - reject
 "^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery" - reject
+"^https?:\/\/gateway-api\.dushu365\.com\/chief-orch\/config\/config\/v100\/appConfig" - reject
 "^https?:\/\/gateway\.shouqiev\.com(:8443)?\/fsda\/app\/bootImage\.json" - reject
 "^https?:\/\/gd\.10086\.cn\/gmccapp\/serv\/\?servicename=GMCCAPP_704_002_001_001" - reject
 "^https?:\/\/gfp\.veta\.naver\.com\/adcall\?" - reject
