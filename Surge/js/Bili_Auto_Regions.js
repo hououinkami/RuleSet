@@ -5,7 +5,7 @@
 如需禁用豆瓣评分或策略通知, 可前往BoxJs设置.
 BoxJs订阅地址: https://raw.githubusercontent.com/NobyDa/Script/master/NobyDa_BoxJs.json
 
-Update: 2023.02.10
+Update: 2023.02.11
 Author: @NobyDa
 Use: Surge, QuanX, Loon
 
@@ -97,7 +97,7 @@ async function SwitchRegion(title, url, body) {
 		} else if (current != CN) {
 			select = { policy: CN, mode: '直连' };
 		}
-		if ($.isQuanX && current === 'direct' && select === '🌐 直连') {
+		if ($.isQuanX && current === 'direct' && select.policy === '🌐 直连') {
 			select = {}; //prevent loopback in some cases
 		}
 		return select;

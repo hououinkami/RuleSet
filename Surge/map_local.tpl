@@ -37,6 +37,7 @@
 "^https?:\/\/api\.yangkeduo\.com\/api\/cappuccino\/splash" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count)" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 "^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+"^https?:\/\/api\.zhihu\.com\/ad-style-service\/request" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 "^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 "^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 "^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
