@@ -146,6 +146,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/" - reject
 "^https?:\/\/api-release\.wuta-cam\.com\/ad_tree" - reject
 "^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get)" - reject
+"^https?:\/\/api3\.cls\.cn\/v1\/boot\/ad" - reject
 "^https?:\/\/api4\.bybutter\.com\/v\d\/app\/placements\/\d\/advertisements" - reject
 "^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash" - reject
 "^https?:\/\/api\.21jingji\.com\/ad\/" - reject
@@ -238,7 +239,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image" - reject
 "^https?:\/\/b-api\.ins\.miaopai\.com\/\d\/ad/" - reject
 "^https?:\/\/bgw\.xinyue\.qq\.com\/xyapi\.PageService\/GetIndexPopFlash" - reject
-"^https?:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/(free\/open\/advertisingV2|c\/home\/searchMark)" - reject
 "^https?:\/\/business\.msstatic\.com\/advertiser\/" - reject
 "^https?:\/\/c\.m\.163\.com\/nc\/gl\/" - reject
 "^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/getAdInfo" - reject
@@ -275,7 +275,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/dl\.app\.gtja\.com\/dzswem\/kvController\/.+?\.jpg$" - reject
 "^https?:\/\/dsa-mfp\.fengshows\.cn\/mfp\/mfpMultipleDelivery\.do\?.+?adunitid" - reject
 "^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/" - reject
-"^https?:\/\/dss0\.bdstatic\.com\/.+/tam-ogel\/.+\.(jpg|mp4)" - reject
 "^https?:\/\/e\.dangdang\.com\/media\/api.+?\?action=getDeviceStartPage" - reject
 "^https?:\/\/elemecdn\.com\/.+?\/sitemap" - reject
 "^https?:\/\/emdcadvertise\.eastmoney\.com\/infoService" - reject
