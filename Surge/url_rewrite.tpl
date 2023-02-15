@@ -78,6 +78,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
+"^https:\/\/api\.sfacg\.com\/ioscfg" - reject
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
@@ -222,6 +223,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/app\.badmintoncn\.com\/mag\/operative\/v\d\/ad\/" - reject
 "^https?:\/\/app\.ddpai\.com\/d\/api\/v\d\/config\/get\/bootscreen" - reject
 "^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement\/" - reject
+"^https?:\/\/app\.hbooker\.com\/setting\/get_startpage_url_list" - reject
 "^https?:\/\/app\.homeinns\.com\/api\/landing" - reject
 "^https?:\/\/app\.mixcapp\.com\/mixc\/api\/v\d\/ad" - reject
 "^https?:\/\/app\.peopleapp\.com\/Api\/\d+/HomeApi\/getAdvertImage" - reject
@@ -339,6 +341,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/m\.ctrip\.com\/restapi\/[\w\/]+tripAds" - reject
 "^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/\d+\/json\/getAdsList" - reject
 "^https?:\/\/m\.tuniu\.com\/api\/operation\/splash\/" - reject
+"^https?:\/\/m\.yhdm\.io\/bar\/yfgg.js" - reject
 "^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/" - reject
 "^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif" - reject
 "^https?:\/\/mage\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen" - reject
@@ -478,11 +481,21 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/(version|top_notice\?|advert\?position=[^2]+)" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
 "^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do" - reject
+"https?:\/\/access\.mypikpak\.com\/access_controller\/v1\/area_accessible" - reject
+"https?:\/\/apis\.lifeweek\.com\.cn\/api\/baseConfig\/getIosNewConfig" - reject
+"https?:\/\/b\.appsimg\.com\/upload\/momin\/" - reject
 "https?:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush\/*" - reject
 "https?:\/\/fbchina\.flipchina\.cn\/v2\/ad\/query\/*" - reject
+"https?:\/\/guanyu\.longfor\.com\/app-server\/api\/v1\/main\/start" - reject
 "https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex)" - reject
+"https?:\/\/homefront\.qunar\.com\/front\/splash\/ad" - reject
 "https?:\/\/ios\.sspai\.com\/api\/v3\/recommend\/page\/get\?ad.*ios_home_modal" - reject
 "https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do" - reject
 "https?:\/\/mangaapi\.manhuaren\.com\/v2\/public\/getShelfActivity" - reject
+"https?:\/\/new-app-api\.ylyk\.com\/v1\/user\/myinfo\/adviser" - reject
 "https?:\/\/open3\.vistastory\.com\/v3\/api.*get_popup" - reject
+"https?:\/\/open3\.vistastory\.com\/v3\/api\/index\/loading_ad" - reject
+"https?:\/\/support\.you\.163\.com\/appversync\/check.do" - reject
+"https?:\/\/tagit\.hyhuo\.com\/recover\/list" - reject
+"https?:\/\/top-widgets-api\.xiaozujian\.com\/api\/ad\/config" - reject
 "https?:\/\/yanxuan.nosdn.127.net\/.*\.mp4" - reject
