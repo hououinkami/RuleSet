@@ -117,7 +117,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/.+?\/img\/ad\.union\.api\/" - reject
 "^https?:\/\/.+?\/music\/common\/upload\/t_splash_info" - reject
 "^https?:\/\/103\.91\.210\.141\:2515\/xgapp\.php\/v2\/top_notice" - reject
-"^https?:\/\/2023.01.28\/v2.0.247" - reject
+"^https?:\/\/2023\.01\.20/v2\.0\/246" - reject
 "^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement" - reject
 "^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis" - reject
 "^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/" - reject
@@ -458,6 +458,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/webboot\.zhangyue\.com\/zycl\/api\/ad\/" - reject
 "^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php.*ads&c=ad.*" - reject
 "^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads" - reject
+"^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/(openscreen\?ad|loadInfo\?|startpicture)" - reject
 "^https?:\/\/wmapi\.meituan\.com\/api\/v\d\/startpicture" - reject
 "^https?:\/\/www1\.elecfans\.com\/www\/delivery\/" - reject
 "^https?:\/\/www\.bodivis\.com\.cn\/app\/splashAdvertise" - reject
