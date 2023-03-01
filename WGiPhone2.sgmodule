@@ -1,0 +1,5 @@
+#!name=WireGuard For Cynthia's iPhone
+#!desc=为Cynthia的iPhone设置WireGuard内网连接
+[Rule]
+# 访问家庭网络
+IP-CIDR,192.168.0.0/24, 📱　桜, no-resolve
