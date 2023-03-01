@@ -1,0 +1,5 @@
+#!name=WireGuard For Kami's Mac
+#!desc=为Kami的Mac设置WireGuard内网连接
+[Rule]
+# 访问家庭网络
+IP-CIDR,192.168.0.0/24, 💻 カミ, no-resolve
