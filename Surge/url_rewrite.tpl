@@ -477,6 +477,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/(version|top_notice\?|advert\?position=[^2]+)" - reject
 "^https?:\/\/zjh5api\.189smarthome\.com:\d+\/xygj-config-api\/queryData" - reject
 "^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/ad\/listLaunchADByCity\.do" - reject
+"^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open" - reject
 "https?:\/\/access\.mypikpak\.com\/access_controller\/v1\/area_accessible" - reject
 "https?:\/\/apis\.lifeweek\.com\.cn\/api\/baseConfig\/getIosNewConfig" - reject
 "https?:\/\/b\.appsimg\.com\/upload\/momin\/" - reject
