@@ -150,6 +150,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/api3\.cls\.cn\/v1\/boot\/ad" - reject
 "^https?:\/\/api4\.bybutter\.com\/v\d\/app\/placements\/\d\/advertisements" - reject
 "^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash" - reject
+"^https?:\/\/api\.21ec74\.com\/v2\.5\/ad" - reject
 "^https?:\/\/api\.21jingji\.com\/ad\/" - reject
 "^https?:\/\/api\.[\w-]+\.abema-tv\.com\/v\d\/ip\/check" - reject
 "^https?:\/\/api\.ahmobile\.cn:443\/eip\?eip_serv_id=app\.getAllNew" - reject
