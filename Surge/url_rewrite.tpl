@@ -78,6 +78,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/cn\.ultraiso\.net\/" https://cn.ezbsystems.com/ultraiso/ 302
 "^https?:\/\/hypersnap\.mairuan\.com\/" https://www.keyshot.com/ 302
 "^https?:\/\/logoshejishi\.mairuan\.com\/" https://www.sothink.com/product/logo-design-software/ 302
+"^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time" - reject
 "^https:\/\/api\.sfacg\.com\/ioscfg" - reject
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
 "^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
@@ -252,7 +253,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -419,6 +419,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/service\.busi\.inke\.cn\/api\/flash\/screen" - reject
 "^https?:\/\/service\.iciba\.com\/popo\/open\/screens\/v\d\?adjson" - reject
 "^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen" - reject
+"^https?:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig" - reject
 "^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen" - reject
 "^https?:\/\/slapi.oray.net/client/ad" - reject
 "^https?:\/\/slapi\.oray\.net\/adver" - reject
@@ -438,6 +439,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/thor\.weidian\.com\/ares\/home\.splash\/" - reject
 "^https?:\/\/tiku\.zhan\.com\/Common\/newAd\/" - reject
 "^https?:\/\/tj\.playcvn\.com\/app\/ads\?" - reject
+"^https?:\/\/tk\.lanjiyin\.com\.cn\/ad\/getAdList" - reject
 "^https?:\/\/tqt\.weibo\.cn\/api\/advert\/" - reject
 "^https?:\/\/tqt\.weibo\.cn\/overall\/redirect\.php\?r=(tqt_sdkad|tqtad)" - reject
 "^https?:\/\/track\.mm\.taou\.com/v\d\/track" - reject
