@@ -1,0 +1,9 @@
+#!name= Bing积分
+#!desc=领取积分可兑换京东E卡或抽奖
+
+[Script]
+Bing积分cookie = requires-body=0,type=http-request,pattern=https:\/\/rewards\.bing\.com,script-path= https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
+Bing积分 = type=cron,cronexp="0 10 0 * * ?",wake-system=1,script-path= https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js
+
+[MITM]
+hostname = %APPEND% rewards.bing.com
