@@ -81,6 +81,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time" - reject
 "^https:\/\/api\.sfacg\.com\/ioscfg" - reject
 "^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$" - reject
+"^https:\/\/vip7\.fzwdyy\.cn:8083\/api\/(getAdvertInfo|getGOOGAdvert)" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(:\d+)?\/V\d\/splash\/getSplashV\d\.action$" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+/xygj-config-api\/queryData" - reject
 "^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d):\d+\/allOne\.php\?ad_name" - reject
@@ -264,6 +265,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList" - reject
 "^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds" - reject
 "^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd" - reject
+"^https?:\/\/client\.tujia\.com\/bnbapp-node\/app\/portal\/getStartPictureAdvertising" - reject
 "^https?:\/\/clientaccess\.10086\.cn\/biz-orange\/DN\/init\/startInit" - reject
 "^https?:\/\/cloud\.189\.cn\/include\/splash\/" - reject
 "^https?:\/\/cmsapi\.wifi8\.com\/v\d\/(emptyAd|adNew)\/" - reject
