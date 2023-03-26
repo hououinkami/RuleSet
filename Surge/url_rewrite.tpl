@@ -253,6 +253,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
+"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -346,7 +347,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif" - reject
 "^https?:\/\/mage\.if\.qidian\.com\/argus\/api\/v\d\/client\/getsplashscreen" - reject
 "^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/" - reject
-"^https?:\/\/mangaapi\.manhuaren\.com\/v\d\/ad\/" - reject
 "^https?:\/\/mangaapi\.manhuaren\.com\/v\d\/public\/getStartPageAds" - reject
 "^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/activity\/advertisement\/get" - reject
 "^https?:\/\/mapi\.appvipshop\.com\/vips-mobile\/rest\/iosAdInfo\/report" - reject
