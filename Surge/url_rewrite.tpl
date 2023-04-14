@@ -457,7 +457,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua" - reject
 "^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd" - reject
 "^https?:\/\/web\.chelaile\.net\.cn\/api\/adpub\/" - reject
-"^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v1\/func\/getmarketconfig" - reject
 "^https?:\/\/webboot\.zhangyue\.com\/zyapi\/bookstore\/ad\/" - reject
 "^https?:\/\/webboot\.zhangyue\.com\/zycl\/api\/ad\/" - reject
 "^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php.*ads&c=ad.*" - reject
