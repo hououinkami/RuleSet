@@ -22,7 +22,7 @@ env:
 
 jobs:
   UpdateRule:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -74,7 +74,7 @@ jobs:
       run : |
         awk '
         {
-          if($0~/always-real-ip = \%APPEND\%/) {
+          if($0~/always-real-ip = %APPEND%/) {
             gsub("always-real-ip = %APPEND%","");
             print $0;
             {exit}; 
