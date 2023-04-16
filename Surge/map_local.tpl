@@ -110,6 +110,7 @@
 "^https?:\/\/nochange\.ggsafe\.com\/ad\/" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/notch\.qdaily\.com\/api\/v\d\/boot_ad" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/oimage([a-z])([0-9])\.ydstatic\.com\/.+?adpublish" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
+"^https?:\/\/open-cms-api\.uc\.cn\/open-cms" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 "^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/p0\.pipi\.cn\/adAdmin\/\w+.jpg\?" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.gif"
 "^https?:\/\/p\.kuaidi100\.com\/mobile\/(mainapi|mobileapi)\.do" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"

@@ -389,6 +389,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/p\.du\.163\.com\/ad\/" - reject
 "^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg" - reject
 "^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp" - reject
+"^https?:\/\/pan-api\.bitqiu\.com\/activity\/(getPromoteGuide|getUrlList)" - reject
 "^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry" - reject
 "^https?:\/\/pan\.baidu\.com\/act\/v\d\/bchannel\/list" - reject
 "^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad" - reject
@@ -478,6 +479,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/yanxuan.nosdn.127.net\/(static-union\/)?.*\.gif" - reject
 "^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A002" - reject
 "^https?:\/\/yxhd\.hori-gz\.com\/\/jfmsApi\/commandWord\/commandWordInfo" - reject
+"^https?:\/\/yxyapi2\.yuxueyuan\.cn\/yxy-api-gateway\/api\/json\/advert\/getsAdStartScreen" - reject
 "^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/" - reject
 "^https?:\/\/zconfig\.alibabausercontent\.com\/zconfig" - reject
 "^https?:\/\/zjdr666\.com\/zjdr\.php\/v\d\/(version|top_notice\?|advert\?position=[^2]+)" - reject
