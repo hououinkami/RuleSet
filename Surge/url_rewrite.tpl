@@ -253,7 +253,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -278,6 +277,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/dispatcher\.camera360\.com\/api\/v1\/list$" - reject
 "^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list" - reject
 "^https?:\/\/dl\.app\.gtja\.com\/dzswem\/kvController\/.+?\.jpg$" - reject
+"^https?:\/\/dq\.dxy\.cn\/api\.php\?action=getpostbanners" - reject
 "^https?:\/\/dsa-mfp\.fengshows\.cn\/mfp\/mfpMultipleDelivery\.do\?.+?adunitid" - reject
 "^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/" - reject
 "^https?:\/\/e\.dangdang\.com\/media\/api.+?\?action=getDeviceStartPage" - reject
