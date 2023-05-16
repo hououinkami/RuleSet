@@ -253,6 +253,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
+"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -328,6 +329,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/(guanggao|ts_ad)\/" - reject
 "^https?:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$" - reject
 "^https?:\/\/j-image\.missfresh\.cn\/img_(.+)\.gif$" - reject
+"^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7\?position" - reject
 "^https?:\/\/jad-api\.jin10\.com\/ad" - reject
 "^https?:\/\/js-ad\.ayximgs\.com\.ad-universe-cdn\.hzhcbkj\.cn\/xgapp\.php\/v2\/top_notice" - reject
 "^https?:\/\/js\.dilidd\.com\/top\.php" - reject
