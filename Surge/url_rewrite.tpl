@@ -111,6 +111,8 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/(mobile|shop)\.laichon\.com\/api\/(v1\/goods\/goodsList|exposureAdvStatistics|getWebAdvList)" - reject
 "^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4)" - reject
 "^https?:\/\/(www|cn)\.pornhub\.com\/_xa\/ads.*" - reject
+"^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/ad" - reject
+"^https?:\/\/.*mangaapi\.manhuaren\.\w{2,4}\/v\d\/public\/(getStartUpMessage|getStartPageAds|getShelfActivity)" - reject
 "^https?:\/\/.+?\/(outadservice|ting\/preload)\/" - reject
 "^https?:\/\/.+?\/api\/v\d\/adRealTime" - reject
 "^https?:\/\/.+?\/brand\/search\/v1\.json" - reject
@@ -122,6 +124,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement" - reject
 "^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis" - reject
 "^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/" - reject
+"^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}:\d+\/api\/v\d\/advert" - reject
 "^https?:\/\/\w+\.58cdn\.com\.cn\/brandads\/" - reject
 "^https?:\/\/\w+\.jstucdn\.com\/(g3\/|js\/ad)" - reject
 "^https?:\/\/\w+\.kakamobi\.cn\/api\/open\/v\d\/advert-sdk\/" - reject
@@ -415,7 +418,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget" - reject
 "^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\/" - reject
 "^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo" - reject
-"^https?:\/\/run\.api\.qyfxgd\.cn:9313\/api\/v1\/advert" - reject
 "^https?:\/\/s1\.api\.tv\.itc\.cn\/v\d\/mobile\/control\/switch\.json" - reject
 "^https?:\/\/s\d\.zdmimg\.com\/www\/api\/v\d\/api\/thirdAd\.php" - reject
 "^https?:\/\/saad\.ms\.zhangyue\.net\/ad" - reject
@@ -441,7 +443,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json" - reject
 "^https?:\/\/syh\.zybang\.com\/com\/adx\/" - reject
 "^https?:\/\/t1\.market\.xiaomi\.com\/thumbnail\/webp\/w1170q100\/" - reject
-"^https?:\/\/tel\.mangaapi\.manhuaren\.com\/(v2\/public\/getStartUpMessage|v1\/public\/getStartPageAds)" - reject
 "^https?:\/\/thor\.weidian\.com\/ares\/home\.splash\/" - reject
 "^https?:\/\/tiku\.zhan\.com\/Common\/newAd\/" - reject
 "^https?:\/\/tj\.playcvn\.com\/app\/ads\?" - reject
@@ -497,7 +498,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "https?:\/\/homefront\.qunar\.com\/front\/splash\/ad" - reject
 "https?:\/\/ios\.sspai\.com\/api\/v3\/recommend\/page\/get\?ad.*ios_home_modal" - reject
 "https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do" - reject
-"https?:\/\/mangaapi\.manhuaren\.com\/v2\/public\/getShelfActivity" - reject
 "https?:\/\/new-app-api\.ylyk\.com\/v1\/user\/myinfo\/adviser" - reject
 "https?:\/\/open3\.vistastory\.com\/v3\/api.*get_popup" - reject
 "https?:\/\/open3\.vistastory\.com\/v3\/api\/index\/loading_ad" - reject
