@@ -256,7 +256,6 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
-"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -287,6 +286,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/e\.dangdang\.com\/media\/api.+?\?action=getDeviceStartPage" - reject
 "^https?:\/\/elemecdn\.com\/.+?\/sitemap" - reject
 "^https?:\/\/emdcadvertise\.eastmoney\.com\/infoService" - reject
+"^https?:\/\/evs\.500\.com\/esinfo\/loading\/loading" - reject
 "^https?:\/\/fb\.fbstatic\.cn\/api\/ape-images\/.*.jpg?" - reject
 "^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4)" - reject
 "^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest" - reject
