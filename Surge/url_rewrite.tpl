@@ -5,6 +5,8 @@ https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
 # www.tvn.cc 韩剧TV
 # Pornhub 视频广告
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+# Pornhub 跳转
+(^https?:\/\/www\.pornhub\.com)(.*) https://cn.pornhub.com$2 307
 # javmost 播放页弹窗广告
 ^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject
 # 百度网页跳转至手机网页版本
