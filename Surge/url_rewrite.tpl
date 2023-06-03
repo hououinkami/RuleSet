@@ -374,6 +374,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/" - reject
 "^https?:\/\/mobileapi-v6\.elong\.com\/adgateway\/" - reject
 "^https?:\/\/mp\.weixin\.qq\.com\/(s|mp)\/(ad_|advertisement|getappmsgad|report|appmsgreport|appmsgpicreport)" - reject
+"^https?:\/\/mp\.weixin\.qq\.com\/mp\/(advertisement_report|cps_product_info|wapcommreport|jsreport|jsmonitor|getappmsgext)" - reject
 "^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info" - reject
 "^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo" - reject
 "^https?:\/\/mpos-pic\.helipay\.com\/upload\/images\/advertisment" - reject
@@ -482,6 +483,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/ads\/" - reject
 "^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config" - reject
 "^https?:\/\/www\.zybang\.com\/adx\/" - reject
+"^https?:\/\/wxa\.wxs\.qq\.com\/tmpl\/kf\/base_tmpl\.html" - reject
 "^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/" - reject
 "^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A002" - reject
 "^https?:\/\/yxhd\.hori-gz\.com\/\/jfmsApi\/commandWord\/commandWordInfo" - reject
