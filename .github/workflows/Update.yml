@@ -215,7 +215,7 @@ jobs:
           }      
         }
         ' tmp.tmp>host.tmp
-        awk NF host.tmp > template/snippet/Surge/host.tpl
+        awk NF host.tmp > Surge/host.tpl
 
     - name: 生成神机规则General
       run : |
@@ -247,16 +247,16 @@ jobs:
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
-        cat realip*.tmp > template/snippet/Surge/always_real_ip.tpl
+        cat realip*.tmp > Surge/always_real_ip.tpl
         cat force-http-engine-hosts*.tmp > force-http-engine-hosts.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > template/snippet/Surge/force_http_engine_hosts.tpl
-        cat rule*.tmp > template/snippet/Surge/rule.tpl
-        cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > template/snippet/Surge/url_rewrite.tpl
-        cat limbo_header_rewrite.tmp > template/snippet/Surge/header_rewrite.tpl
-        cat limbo_script.tmp youtube_ad_script.tmp spotify_script.tmp script*.tmp > template/snippet/Surge/script.tpl
-        cat youtube_ad_map_local.tmp map_local*.tmp > template/snippet/Surge/map_local.tpl
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > Surge/force_http_engine_hosts.tpl
+        cat rule*.tmp > Surge/rule.tpl
+        cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > Surge/url_rewrite.tpl
+        cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
+        cat limbo_script.tmp youtube_ad_script.tmp spotify_script.tmp script*.tmp > Surge/script.tpl
+        cat youtube_ad_map_local.tmp map_local*.tmp > Surge/map_local.tpl
         cat limbo_hostname.tmp youtube_ad_hostname.tmp spotify_hostname.tmp hostname*.tmp > hostname.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > template/snippet/Surge/hostname.tpl
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
 
     - name: 删除临时文件
       if: (!cancelled())
