@@ -1,3 +1,4 @@
+# > Limbo
 泥巴影视(nbys) = type=http-response,pattern="(nivod4\.tv)(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.js,script-update-interval=0
 知道搜索广告(baidu) = type=http-response,pattern="^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word)",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.zhidao.js,script-update-interval=0
 搜索首页广告(baidu) = type=http-response,pattern="^https?:\/\/(www|m)\.baidu\.com(/$|\/\?ref.*)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8)))",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.index.js,script-update-interval=0
