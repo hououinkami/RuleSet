@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    path:
-      - .*
+    # path:
+    #   - .*
   release:
     types: [published]
   schedule:
@@ -43,71 +43,35 @@ jobs:
     
     - name: 获取最新源
       run : |
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule -O all_Rwrite.tmp
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
         wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
         wget https://raw.githubusercontent.com/Maasea/sgmodule/master/YoutubeAds.sgmodule -O youtube_ad.tmp
-        wget https://raw.githubusercontent.com/hououinkami/RuleSet/main/Surge/YouTubeAds.sgmodule -O youtube_ad2.tmp
         wget https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule -O limbo.tmp
+        wget https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module -O spotify.tmp
+
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
+
     # 示例
     # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
     # 过滤空白行
     # awk NF tmp.tmp>rule2.tmp
-    - name: 生成神机规则host
-      run : |
-        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
-        awk '
-        {
-          if($0~/\# >/ || $0~/=/) {
-            if($0!~/hostname/) {
-              print $0;
-            }
-          }      
-        }
-        ' tmp.tmp>host.tmp
-        awk NF host.tmp > Surge/host.tpl
-
-    - name: 生成神机规则General
-      run : |
-        awk '
-        {
-          if($0~/always-real-ip = %APPEND%/) {
-            gsub("always-real-ip = %APPEND%","");
-            print $0;
-            {exit}; 
-          }      
-        }
-        ' General.tmp>realip2.tmp
-    
-    - name: 生成神机规则Advertising
-      run : |
-        awk '
-        {
-          if($0~/force-http-engine-hosts = %APPEND%/) {
-            gsub("force-http-engine-hosts = %APPEND% ","");
-            print $0;
-            {exit};
-          }      
-        }
-        ' Advertising.tmp>force-http-engine-hosts2.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
-        awk NF tmp.tmp>map_local2.tmp
 
     - name: 生成整合规则hostname
       run : |
         awk '
         {
-          if($0~/hostname = \%APPEND\%/) {
+          if($0~/hostname = %APPEND%/) {
             gsub("hostname = %APPEND%","");
             print $0 ",";
             {exit}; 
           }      
         }
-        ' all_Advertising.tmp>hostname1.tmp
+        ' all_Advertising.tmp>tmp.tmp
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > hostname1.tmp
+        sed 's/^/整合, /' hostname1.tmp
     
     - name: 生成整合规则Rewrite
       run : |
@@ -123,6 +87,7 @@ jobs:
 
         awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk NF tmp.tmp>rule1.tmp
+        sed '1i # > 整合' rule1.tmp
 
         awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk '
@@ -133,16 +98,18 @@ jobs:
         }
         ' tmp.tmp>tmp2.tmp
         awk NF tmp2.tmp>url_rewrite1.tmp
+        sed '1i # > 整合' url_rewrite1.tmp
 
         awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk NF tmp.tmp>map_local1.tmp
 
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
         awk NF tmp.tmp>script1.tmp
+        sed '1i # > 整合' script1.tmp
 
         awk '
         {
-          if($0~/hostname = \%APPEND\%/) {
+          if($0~/hostname = %APPEND%/) {
             gsub("hostname = %APPEND%","");
             print $0;
             {exit}; 
@@ -163,7 +130,7 @@ jobs:
 
         awk '
         {
-          if($0~/hostname = \%APPEND\%/) {
+          if($0~/hostname = %APPEND%/) {
             gsub("hostname = %APPEND%","");
             print $0 ",";
             {exit}; 
@@ -191,7 +158,7 @@ jobs:
 
         awk '
         {
-          if($0~/hostname = \%APPEND\%/) {
+          if($0~/hostname = %APPEND%/) {
             gsub("hostname = %APPEND%","");
             print $0 ",";
             {exit}; 
@@ -199,6 +166,22 @@ jobs:
         }
         ' limbo.tmp>tmp.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > limbo_hostname.tmp
+
+    - name: 生成Spotify破解规则
+      run : |
+        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' spotify.tmp>tmp.tmp
+        awk NF tmp.tmp>spotify_script.tmp
+
+        awk '
+        {
+          if($0~/hostname = %APPEND%/) {
+            gsub("hostname = %APPEND%","");
+            print $0 ",";
+            {exit}; 
+          }      
+        }
+        ' spotify.tmp>tmp.tmp
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > spotify_hostname.tmp
 
     - name: 生成Bilibili规则
       run : |
@@ -213,52 +196,67 @@ jobs:
 
         awk '
         {
-          if($0~/hostname = \%APPEND\%/) {
+          if($0~/hostname = %APPEND%/) {
             gsub("hostname = %APPEND%","");
             print $0 ",";
             {exit}; 
           }      
         }
         ' bili.tmp>bili_hostname.tmp
-
-    - name: Bilibili自动切换
+    - name: 生成神机规则host
       run : |
-        wget https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js -O biliauto.tmp
+        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
         awk '
         {
-          gsub("📺 DomesticMedia","📺 Bilibili");
-          sub("DIRECT","🌐 直连");
-          gsub("🇭🇰 sub-policy","🇭🇰 香港");
-          gsub("🇹🇼 sub-policy","🇨🇳 台湾");
-          gsub("🏁 sub-policy","🇭🇰 香港");
-          print $0;
+          if($0~/# >/ || $0~/=/) {
+            if($0!~/hostname/) {
+              print $0;
+            }
+          }      
         }
-        ' biliauto.tmp>Surge/js/Bili_Auto_Regions.js
-      
-    - name: Bilibili启动时切换为直连
+        ' tmp.tmp>host.tmp
+        awk NF host.tmp > template/snippet/Surge/host.tpl
+
+    - name: 生成神机规则General
       run : |
-        wget https://raw.githubusercontent.com/ddgksf2013/Scripts/master/bilibili_startup_direct.js -O bilistart.tmp
         awk '
         {
-          gsub("DomesticMedia","📺 Bilibili");
-          sub("direct","🌐 直连");
-          print $0;
+          if($0~/always-real-ip = %APPEND%/) {
+            gsub("always-real-ip = %APPEND%","");
+            print $0;
+            {exit}; 
+          }      
         }
-        ' bilistart.tmp>Surge/js/Bilibili_Startup_Direct.js
+        ' General.tmp>realip2.tmp
+    
+    - name: 生成神机规则Advertising
+      run : |
+        # awk '
+        # {
+        #   if($0~/force-http-engine-hosts = %APPEND%/) {
+        #     gsub("force-http-engine-hosts = %APPEND% ","");
+        #     print $0;
+        #     {exit};
+        #   }      
+        # }
+        # ' Advertising.tmp>force-http-engine-hosts2.tmp
 
+        # awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
+        # awk NF tmp.tmp>map_local2.tmp
+        
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
-        cat realip*.tmp > Surge/always-real-ip.tpl
+        cat realip*.tmp > template/snippet/Surge/always_real_ip.tpl
         cat force-http-engine-hosts*.tmp > force-http-engine-hosts.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > Surge/force-http-engine-hosts.tpl
-        cat rule*.tmp > Surge/rule.tpl
-        cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > Surge/url_rewrite.tpl
-        cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
-        cat youtube_ad_script.tmp limbo_script.tmp script*.tmp > Surge/script.tpl
-        cat youtube_ad_map_local.tmp map_local*.tmp > Surge/map_local.tpl
-        cat limbo_hostname.tmp youtube_ad_hostname.tmp hostname*.tmp > hostname.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > template/snippet/Surge/force_http_engine_hosts.tpl
+        cat rule*.tmp > template/snippet/Surge/rule.tpl
+        cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > template/snippet/Surge/url_rewrite.tpl
+        cat limbo_header_rewrite.tmp > template/snippet/Surge/header_rewrite.tpl
+        cat limbo_script.tmp youtube_ad_script.tmp spotify_script.tmp script*.tmp > template/snippet/Surge/script.tpl
+        cat youtube_ad_map_local.tmp map_local*.tmp > template/snippet/Surge/map_local.tpl
+        cat limbo_hostname.tmp youtube_ad_hostname.tmp spotify_hostname.tmp hostname*.tmp > hostname.tmp
+        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > template/snippet/Surge/hostname.tpl
 
     - name: 删除临时文件
       if: (!cancelled())
