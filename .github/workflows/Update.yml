@@ -167,7 +167,7 @@ jobs:
         }
         ' limbo.tmp>tmp.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > limbo_hostname.tmp
-        sed -i 's/^/Limboooooo, /' hostname1.tmp
+        sed -i 's/^/Limboooooo, &/g' hostname1.tmp
 
     - name: 生成Spotify破解规则
       run : |
