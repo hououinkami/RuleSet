@@ -255,7 +255,7 @@ jobs:
         cat rule*.tmp > Surge/rule.tpl
         cat limbo_url_rewrite.tmp youtube_ad_url_rewrite.tmp url_rewrite*.tmp > Surge/url_rewrite.tpl
         cat limbo_header_rewrite.tmp > Surge/header_rewrite.tpl
-        cat limbo_script.tmp youtube_ad_script.tmp spotify_script.tmp script*.tmp > Surge/script.tpl
+        cat *_script.tmp script*.tmp > Surge/script.tpl
         cat youtube_ad_map_local.tmp map_local*.tmp > Surge/map_local.tpl
         cat limbo_hostname.tmp youtube_ad_hostname.tmp spotify_hostname.tmp hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > Surge/hostname.tpl
