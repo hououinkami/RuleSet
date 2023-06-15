@@ -155,6 +155,7 @@ jobs:
 
         awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' limbo.tmp>tmp.tmp
         awk NF tmp.tmp>limbo_script.tmp
+        sed '1i 测试测试' limbo_script.tmp
 
         awk '
         {
