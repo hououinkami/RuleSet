@@ -258,6 +258,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/capis(-\d)?\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/capis\.didapinche\.com\/ad\/" - reject
 "^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/ad\/" - reject
+"^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade" - reject
 "^https?:\/\/cdn\.\w{3}\.chelaileapp\.cn\/(api\/)?adpub" - reject
 "^https?:\/\/cdn\.api\.fotoable\.com\/Advertise\/" - reject
 "^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json" - reject
@@ -293,6 +294,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 "^https?:\/\/flowplus\.meituan\.net\/v\d\/\w+\/linglong\/\d+\.(gif|jpg|mp4)" - reject
 "^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/biz\/base\/appversion\/latest" - reject
 "^https?:\/\/foodie-api\.yiruikecorp\.com\/v\d\/(banner|notice)\/overview" - reject
+"^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer" - reject
 "^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4" - reject
 "^https?:\/\/fuss10\.elemecdn\.com\/.+?\/w\/640\/h\/\d{3,4}" - reject
 "^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery" - reject
