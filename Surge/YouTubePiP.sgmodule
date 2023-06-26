@@ -1,5 +1,0 @@
-#!name=激活YouTube画中画
-#!desc=激活YouTube（iOS）的画中画功能
-[Rule]
-# 激活YouTube（iOS）的画中画功能
-DOMAIN-SUFFIX, youtubei.googleapis.com, 🎬 YouTube PiP
