@@ -3,7 +3,7 @@
 
  
 [General]
-force-http-engine-hosts = %APPEND% *.kami.cn, ac.pub, bing.ai
+force-http-engine-hosts = %APPEND% 
 
 [MITM]
 tcp-connection = true
