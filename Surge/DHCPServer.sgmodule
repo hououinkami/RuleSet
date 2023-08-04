@@ -1,9 +1,0 @@
-#!name=Google重定位
-#!desc=强行将Google重定位至日本，避免送中后强行跳转至HK
-
- 
-[General]
-force-http-engine-hosts = %APPEND% *.top, *.pub
-
-[MITM]
-tcp-connection = true

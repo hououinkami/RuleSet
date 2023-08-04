@@ -1,0 +1,9 @@
+#!name=DHCP模式
+#!desc=当开启DHCP服务器接管网络时，启用此模块以处理tcp连接的MITM请求
+
+ 
+[General]
+force-http-engine-hosts = %APPEND% *.top, *.pub
+
+[MITM]
+tcp-connection = true
