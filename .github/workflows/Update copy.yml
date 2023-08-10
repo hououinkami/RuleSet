@@ -43,264 +43,128 @@ jobs:
     
     - name: 获取最新源
       run : |
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule -O all_Rwrite.tmp
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O all_Advertising.tmp
-        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.sgmodule -O bili.tmp
-        wget https://raw.githubusercontent.com/Maasea/sgmodule/master/YoutubeAds.sgmodule -O youtube_ad.tmp
-        wget https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule -O limbo.tmp
-        wget https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module -O spotify.tmp
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule -O 01_blackmatrix7去广告.sgmodule
+        wget https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/AllInOne/AllInOne_Mock.sgmodule -O 02_blackmatrix7重写.sgmodule
+        wget https://raw.githubusercontent.com/Maasea/sgmodule/master/YoutubeAds.sgmodule -O 03_YouTube增强.sgmodule
+        wget https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule -O 04Limbo.sgmodule
+        wget https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module -O 05_Spotify破解.sgmodule
+        wget https://raw.githubusercontent.com/sunhaoxiang/Surge/main/Module/ZhihuWeb.sgmodule -O 06_知乎Web去广告.sgmodule
+        wget https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Module/HuiJuDongManAds.sgmodule -O 07_荟聚动漫.sgmodule
 
-        wget https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Head.conf -O dlerHead.tmp
-        wget https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Rule.conf -O dleRule.tmp
-        
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O shenji.tmp
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/General.sgmodule -O General.tmp
-        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/Advertising.sgmodule -O Advertising.tmp
+        wget https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Head.conf -O 01_DlerCloud_Head.conf
+        wget https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Rule.conf -O 02_DlerCloud_Rule.conf
+        wget https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf -O 03_神机.conf
 
     # 示例
-    # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' all_Rwrite.tmp>tmp.tmp
+    # awk '/^(终止行起始字段)/{f=0} f; /起始行关键字/{f=1}' $module>tmp.tmp
     # 过滤空白行
     # awk NF tmp.tmp>rule2.tmp
 
-    - name: 循环
+    - name: 模块整合
       run : |
+        num=0
         for module in *.sgmodule
         do
+          num=`expr $num + 1`
+
+          # force-http-engine-hosts
+          awk '
+          {
+            if($0~/force-http-engine-hosts = %APPEND%/) {
+              gsub("force-http-engine-hosts = %APPEND% ","");
+              print $0 ",";
+              {exit};
+            }      
+          }
+          ' $module>force-http-engine-hosts_$num.tmp 
           
+          # Rule
+          awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' $module>tmp.tmp
+          awk NF tmp.tmp>rule_$num.tmp
+          
+          # Header Rewrite
+          awk '/^(\[)/{f=0} f; /\[Header Rewrite\]/{f=1}' $module>tmp.tmp
+          awk NF tmp.tmp>header_rewrite_$num.tmp
+          sed -i '1i\# > $module' header_rewrite_$num.tmp
+
+          # URL Rewrite
+          awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' $module>tmp.tmp
+          awk '
+          {
+            if($0!~/imgextra|m.baidu.com 302/) {
+              print $0;
+            }      
+          }
+          ' tmp.tmp>tmp2.tmp
+          awk NF tmp2.tmp>url_rewrite_$num.tmp
+          sed -i '1i\# > $module' url_rewrite_$num.tmp
+          
+          # Map Local
+          awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' $module>tmp.tmp
+          awk NF tmp.tmp>map_local_$num.tmp
+          
+          # Script
+          awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' $module>tmp.tmp
+          awk NF tmp.tmp>script_$num.tmp
+          sed -i '1i\# > $module' script_$num.tmp
+
+          # hostname
+          awk '
+          {
+            if($0~/hostname = %APPEND%/) {
+              gsub("hostname = %APPEND%","");
+              print $0 ",";
+              {exit}; 
+            }      
+          }
+          ' $module>tmp.tmp
+          awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > hostname_$num.tmp
+          sed -i 's/^/$module, &/g' hostname_$num.tmp
         done
-    
-    
-    - name: 生成整合规则hostname
-      run : |
-        awk '
-        {
-          if($0~/hostname = %APPEND%/) {
-            gsub("hostname = %APPEND%","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' all_Advertising.tmp>hostname1.tmp
-        sed -i 's/^/整合, &/g' hostname1.tmp
-    
-    - name: 生成整合规则Rewrite
-      run : |
-        awk '
-        {
-          if($0~/force-http-engine-hosts = %APPEND%/) {
-            gsub("force-http-engine-hosts = %APPEND% ","");
-            print $0 ",";
-            {exit};
-          }      
-        }
-        ' all_Rwrite.tmp>force-http-engine-hosts1.tmp 
-
-        awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>rule1.tmp
-
-        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk '
-        {
-          if($0!~/imgextra/) {
-            print $0;
-          }      
-        }
-        ' tmp.tmp>tmp2.tmp
-        awk NF tmp2.tmp>url_rewrite1.tmp
-        sed -i '1i\# > 整合' url_rewrite1.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>map_local1.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' all_Rwrite.tmp>tmp.tmp
-        awk NF tmp.tmp>script1.tmp
-        sed -i '1i\# > 整合' script1.tmp
-
-        awk '
-        {
-          if($0~/hostname = %APPEND%/) {
-            gsub("hostname = %APPEND%","");
-            print $0;
-            {exit}; 
-          }      
-        }
-        ' all_Rwrite.tmp>hostname2.tmp
-
-    - name: 生成YouTube广告屏蔽规则
-      run : |
-        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' youtube_ad.tmp>tmp.tmp
-        awk NF tmp.tmp>youtube_ad_url_rewrite.tmp
-        sed -i '1i\# > YouTube' youtube_ad_url_rewrite.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' youtube_ad.tmp>tmp.tmp
-        awk NF tmp.tmp>youtube_ad_script.tmp
-        sed -i '1i\# > YouTube' youtube_ad_script.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' youtube_ad.tmp>tmp.tmp
-        awk NF tmp.tmp>youtube_ad_map_local.tmp
-
-        awk '
-        {
-          if($0~/hostname = %APPEND%/) {
-            gsub("hostname = %APPEND%","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' youtube_ad.tmp>youtube_ad_hostname.tmp
-        sed -i 's/^/YouTube, &/g' youtube_ad_hostname.tmp
-
-    - name: 生成Adblock4limbo规则Rewrite
-      run : |
-        awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
-        awk '
-        {
-          if($0!~/m.baidu.com 302/) {
-            print $0; 
-          }      
-        }
-        ' tmp.tmp>tmp2.tmp
-        awk NF tmp2.tmp>limbo_url_rewrite.tmp
-        sed -i '1i\# > Limbo' limbo_url_rewrite.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Header Rewrite\]/{f=1}' limbo.tmp>tmp.tmp
-        awk NF tmp.tmp>limbo_header_rewrite.tmp
-        sed -i '1i\# > Limbo' limbo_header_rewrite.tmp
-
-        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' limbo.tmp>tmp.tmp
-        awk NF tmp.tmp>limbo_script.tmp
-        sed -i '1i\# > Limbo' limbo_script.tmp
-
-        awk '
-        {
-          if($0~/hostname = %APPEND%/) {
-            gsub("hostname = %APPEND%","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' limbo.tmp>tmp.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > limbo_hostname.tmp
-        sed -i 's/^/Limbo, &/g' limbo_hostname.tmp
-
-    - name: 生成Spotify破解规则
-      run : |
-        awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' spotify.tmp>tmp.tmp
-        awk NF tmp.tmp>spotify_script.tmp
-        sed -i '1i\# > Spotify' spotify_script.tmp
-
-        awk '
-        {
-          if($0~/hostname = %APPEND%/) {
-            gsub("hostname = %APPEND%","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' spotify.tmp>tmp.tmp
-        awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' tmp.tmp > spotify_hostname.tmp
-        sed -i 's/^/Spotify破解, &/g' spotify_hostname.tmp
-
-    - name: 生成Bilibili规则
-      run : |
-        # awk '/^(\[)/{f=0} f; /\[Rule\]/{f=1}' bili.tmp>tmp.tmp
-        # awk NF tmp.tmp>bili_rule.tmp
-        # sed -i '1i\# > Bilibili' bili_rule.tmp
-
-        # awk '/^(\[)/{f=0} f; /\[URL Rewrite\]/{f=1}' bili.tmp>tmp.tmp
-        # awk NF tmp.tmp>bili_url_rewrite.tmp
-        # sed -i '1i\# > Bilibili' bili_url_rewrite.tmp
-
-        # awk '/^(\[)/{f=0} f; /\[Script\]/{f=1}' bili.tmp>tmp.tmp
-        # awk NF tmp.tmp>bili_script.tmp
-        # sed -i '1i\# > Bilibili' bili_script.tmp
-
-        # awk '
-        # {
-        #   if($0~/hostname = %APPEND%/) {
-        #     gsub("hostname = %APPEND%","");
-        #   print $0 ",";
-        #   {exit}; 
-        # }      
-        # }
-        # ' bili.tmp>bili_hostname.tmp
-        # sed -i 's/^/Bilibili增强, &/g' bili_hostname.tmp
-
-    - name: 生成DlerCloud Header
-      run : |
-        awk '
-        {
-          if($0~/skip-proxy = /) {
-            gsub("skip-proxy = ","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' dlerHead.tmp>skip-proxy1.tmp
-
-        awk '
-        {
-          if($0~/always-real-ip = /) {
-            gsub("always-real-ip = ","");
-            print $0 ",";
-            {exit}; 
-          }      
-        }
-        ' dlerHead.tmp>realip1.tmp
         
-        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' dleRule.tmp>tmp.tmp
-        awk '
-        {
-          if($0~/# >/ || $0~/=/) {
-            if($0!~/hostname/) {
-              print $0;
-            }
-          }      
-        }
-        ' tmp.tmp>host.tmp
-        awk NF host.tmp > host01.tmp
-
-    - name: 生成神机规则host
+    - name: 配置整合
       run : |
-        awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' shenji.tmp>tmp.tmp
-        awk '
-        {
-          if($0~/# >/ || $0~/=/) {
-            if($0!~/hostname/) {
-              print $0;
-            }
-          }      
-        }
-        ' tmp.tmp>host.tmp
-        awk NF host.tmp > host02.tmp
+        num=0
+        for conf in *.conf
+        do
+          num=`expr $num + 1`
 
-    - name: 生成神机规则General
-      run : |
-        awk '
-        {
-          if($0~/always-real-ip = %APPEND%/) {
-            gsub("always-real-ip = %APPEND%","");
-            print $0;
-            {exit}; 
-          }      
-        }
-        ' General.tmp>realip2.tmp
-    
-    - name: 生成神机规则Advertising
-      run : |
-        # awk '
-        # {
-        #   if($0~/force-http-engine-hosts = %APPEND%/) {
-        #     gsub("force-http-engine-hosts = %APPEND% ","");
-        #     print $0;
-        #     {exit};
-        #   }      
-        # }
-        # ' Advertising.tmp>force-http-engine-hosts2.tmp
+          # skip-proxy
+          awk '
+          {
+            if($0~/skip-proxy = /) {
+              gsub("skip-proxy = ","");
+              print $0 ",";
+              {exit}; 
+            }      
+          }
+          ' $conf>skip-proxy_$num.tmp
 
-        # awk '/^(\[)/{f=0} f; /\[Map Local\]/{f=1}' Advertising.tmp>tmp.tmp
-        # awk NF tmp.tmp>map_local2.tmp
-        
+          # always-real-ip
+          awk '
+          {
+            if($0~/always-real-ip = /) {
+              gsub("always-real-ip = ","");
+              print $0 ",";
+              {exit}; 
+            }      
+          }
+          ' $conf>realip_$num.tmp
+
+          # Host
+          awk '/^(\[)/{f=0} f; /\[Host\]/{f=1}' $conf>tmp.tmp
+          awk '
+          {
+            if($0~/# >/ || $0~/=/) {
+              if($0!~/hostname/) {
+                print $0;
+              }
+            }      
+          }
+          ' tmp.tmp>tmp2.tmp
+          awk NF tmp2.tmp > host_$num.tmp
+        done
+
     - name: 合并文件_all
       if: env.VER == 'all' && !cancelled()
       run : |
@@ -310,19 +174,19 @@ jobs:
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' always_real_ip.tmp > template/snippet/Surge/always_real_ip.tpl
         cat force-http-engine-hosts*.tmp > force-http-engine-hosts.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' force-http-engine-hosts.tmp > template/snippet/Surge/force_http_engine_hosts.tpl
-        cat host0*.tmp > template/snippet/Surge/host.tpl
+        cat host_*.tmp > template/snippet/Surge/host.tpl
         cat rule*.tmp > template/snippet/Surge/rule.tpl
-        cat *_url_rewrite.tmp url_rewrite*.tmp > template/snippet/Surge/url_rewrite.tpl
-        cat *_header_rewrite.tmp > template/snippet/Surge/header_rewrite.tpl
-        cat *_script.tmp script*.tmp > template/snippet/Surge/script.tpl
-        cat *_map_local.tmp map_local*.tmp > template/snippet/Surge/map_local.tpl
-        cat *_hostname.tmp hostname*.tmp > hostname.tmp
+        cat url_rewrite*.tmp > template/snippet/Surge/url_rewrite.tpl
+        cat header_rewrite.tmp > template/snippet/Surge/header_rewrite.tpl
+        cat script*.tmp > template/snippet/Surge/script.tpl
+        cat map_local*.tmp > template/snippet/Surge/map_local.tpl
+        cat hostname*.tmp > hostname.tmp
         awk '{if(NR%3!=0)ORS=" ";else ORS="\n "}1' hostname.tmp > template/snippet/Surge/hostname.tpl
 
     - name: 删除临时文件
       if: (!cancelled())
       run : |
-        rm *.tmp
+        rm *.tmp *.sgmodule *.conf
         ls
     
     - name: 判断是否有变更
